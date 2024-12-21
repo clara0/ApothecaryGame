@@ -23,17 +23,13 @@ func _process(_delta):
 	var y: float = direction.y
 	if y == 0 && x == 0:
 		# DO WE WANT AN IDLE?
-		# _curr_anim = Anim.IDLE
-		_animation_player.stop()
+		_curr_anim = Anim.IDLE
 	elif abs(y) >= abs(x): # fyi y-axis is flipped
 		_curr_anim = Anim.UP if y < 0 else Anim.DOWN
 	else:
 		_curr_anim = Anim.RIGHT if x > 0 else Anim.LEFT
-	# temp until other animations are made
-	if _curr_anim == Anim.DOWN:
-		_animation_player.play(_anim_states[_curr_anim]) 
-	else:
-		_animation_player.stop()
+		
+	_animation_player.play(_anim_states[_curr_anim]) 
 	
 # runs 60 times each second
 func _physics_process(_delta):
