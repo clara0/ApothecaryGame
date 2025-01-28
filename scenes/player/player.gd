@@ -9,10 +9,11 @@ var _anim_states = {
 	4 : "left_walk",
 }
 
-var direction: Vector2 = Vector2.ZERO
-@export var speed: int = 100
 @onready var _animation_player = self.get_node("AnimationPlayer")
 var _curr_anim: Anim = Anim.IDLE
+
+var direction: Vector2 = Vector2.ZERO
+@export var speed: int = 100
 
 # runs once per frame
 func _process(_delta):

@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://f8sn0a0pa6k7"]
 
-[ext_resource type="Texture2D" uid="uid://dblj62mp7qjyn" path="res://graphics/player/bonabelle_sprites.png" id="1_vbr0f"]
+[ext_resource type="Texture2D" uid="uid://dauywwfr7yyiu" path="res://graphics/player/bonnie_sprites_2.png" id="1_fnk66"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5orw"]
-radius = 25.0
-height = 92.0
+radius = 13.3333
+height = 37.3333
 
 [sub_resource type="Animation" id="Animation_bav0c"]
 length = 0.001
@@ -104,7 +104,6 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_t5orw")
@@ -116,6 +115,8 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_vbr0f")
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_fnk66")
 hframes = 4
 vframes = 4
