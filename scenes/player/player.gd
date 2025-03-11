@@ -13,27 +13,22 @@ var _anim_states = {
 var _curr_anim: Anim = Anim.IDLE
 
 var direction: Vector2 = Vector2.ZERO
-@export var speed: int = 100
+@export var speed: int = 175
 
-var save_file_path = "user://save/"
-var save_file_name = "player_save.tres"
-var data = player_data.new()
-
-func _ready() -> void:
-	verify_save_dir(save_file_path)
 	
-func verify_save_dir(path : String):
-	DirAccess.make_dir_absolute(path)
+func save() -> Dictionary:
+	var player_data = {
+		"file" = get_scene_file_path(),
+		"x" = position.x,
+		"y" = position.y,
+		"anim" = "idle", 
+	}
+	return player_data
 	
-func load_data() -> void:
-	data = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
-	self.position = data.position
-	_animation_player.play("RESET")
-	print("Loaded successfully!")
-	
-func save() -> void:
-	ResourceSaver.save(data, save_file_path + save_file_name)
-	print("Saved successfully!")
+func load(data : Dictionary):
+	position.x = data["x"]
+	position.y = data["y"]
+	_animation_player.play(data["anim"])
 
 # runs once per frame
 func _process(_delta):
@@ -51,12 +46,11 @@ func _process(_delta):
 		_curr_anim = Anim.RIGHT if x > 0 else Anim.LEFT
 		
 	_animation_player.play(_anim_states[_curr_anim]) 
-	data.update_position(self.position)
 	
 	if Input.is_action_just_pressed("save"):
 		save()
-	elif Input.is_action_just_pressed("load"):
-		load_data()
+	#elif Input.is_action_just_pressed("load"):
+		#load()
 	
 # runs 60 times each second
 func _physics_process(_delta):

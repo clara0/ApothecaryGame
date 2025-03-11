@@ -103,7 +103,7 @@ _data = {
 "right_walk": SubResource("Animation_mcv52")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Persist"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_t5orw")
