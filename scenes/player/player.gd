@@ -9,6 +9,7 @@ var _anim_states = {
 	4 : "left_walk",
 }
 
+
 @onready var _animation_player = self.get_node("AnimationPlayer")
 var _curr_anim: Anim = Anim.IDLE
 
@@ -17,18 +18,20 @@ var direction: Vector2 = Vector2.ZERO
 
 	
 func save() -> Dictionary:
-	var player_data = {
+	var data = {
 		"file" = get_scene_file_path(),
 		"x" = position.x,
 		"y" = position.y,
 		"anim" = "idle", 
 	}
-	return player_data
-	
+	return data
+
+
 func load(data : Dictionary):
 	position.x = data["x"]
 	position.y = data["y"]
 	_animation_player.play(data["anim"])
+
 
 # runs once per frame
 func _process(_delta):
@@ -51,7 +54,8 @@ func _process(_delta):
 		save()
 	#elif Input.is_action_just_pressed("load"):
 		#load()
-	
+
+
 # runs 60 times each second
 func _physics_process(_delta):
 	velocity = direction * speed;

@@ -1,6 +1,5 @@
 extends Node
 
-
 func save_game() -> void:
 	var	save_file = FileAccess.open("user://save/game.save", FileAccess.WRITE)
 	var save_nodes : Array = get_tree().get_nodes_in_group("Persist")
