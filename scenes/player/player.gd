@@ -12,7 +12,6 @@ var _anim_states = {
 
 @onready var _animation_player = self.get_node("AnimationPlayer")
 var _curr_anim: Anim = Anim.IDLE
-
 var direction: Vector2 = Vector2.ZERO
 @export var speed: int = 175
 
@@ -50,10 +49,9 @@ func _process(_delta):
 		
 	_animation_player.play(_anim_states[_curr_anim]) 
 	
-	if Input.is_action_just_pressed("save"):
-		save()
-	#elif Input.is_action_just_pressed("load"):
-		#load()
+	if Input.is_action_just_pressed("menu"):
+		get_tree().paused = true
+		get_node("../Menu").visible = true
 
 
 # runs 60 times each second
