@@ -17,6 +17,7 @@ var direction: Vector2 = Vector2.ZERO
 
 	
 func save() -> Dictionary:
+	print("Saving player...")
 	var data = {
 		"file" = get_scene_file_path(),
 		"x" = position.x,
@@ -24,16 +25,21 @@ func save() -> Dictionary:
 		"anim" = "idle", 
 	}
 	return data
+	
+	
+func pause() -> void:
+	_animation_player.stop
 
 
-func load(data : Dictionary):
+func load(data : Dictionary) -> void:
+	print("Loading player...")
 	position.x = data["x"]
 	position.y = data["y"]
 	_animation_player.play(data["anim"])
 
 
 # runs once per frame
-func _process(_delta):
+func _process(_delta) -> void:
 	direction = Input.get_vector("left", "right", "up", "down").normalized()
 	
 	# feel like there's a better way of doing this...
@@ -51,6 +57,6 @@ func _process(_delta):
 
 
 # runs 60 times each second
-func _physics_process(_delta):
+func _physics_process(_delta) -> void:
 	velocity = direction * speed;
 	move_and_slide()
