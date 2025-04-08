@@ -48,10 +48,6 @@ func _process(_delta):
 		_curr_anim = Anim.RIGHT if x > 0 else Anim.LEFT
 		
 	_animation_player.play(_anim_states[_curr_anim]) 
-	
-	if Input.is_action_just_pressed("menu"):
-		get_tree().paused = true
-		get_node("../Menu").visible = true
 
 
 # runs 60 times each second
