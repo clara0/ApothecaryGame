@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://ysuhy6cl4fqh"]
+[gd_scene load_steps=10 format=4 uid="uid://ysuhy6cl4fqh"]
 
 [ext_resource type="PackedScene" uid="uid://f8sn0a0pa6k7" path="res://scenes/player/player.tscn" id="1_goqnc"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="2_53btb"]
-[ext_resource type="Script" path="res://scenes/menu/menu.gd" id="2_dmreb"]
 [ext_resource type="Texture2D" uid="uid://bqerarxqy7ceg" path="res://graphics/background/sketchy_road.png" id="3_r5h2w"]
 [ext_resource type="Texture2D" uid="uid://wbk1tvcfv121" path="res://graphics/background/npc_house_sorta_final.png" id="4_2o0ev"]
-[ext_resource type="PackedScene" uid="uid://dhwigvw8d1kk8" path="res://scenes/menu/menu.tscn" id="5_q6khd"]
+[ext_resource type="PackedScene" uid="uid://co1hr67rpogvn" path="res://scenes/menus/game_menu.tscn" id="7_m4he7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_krdq4"]
 texture = ExtResource("3_r5h2w")
@@ -157,51 +156,6 @@ sources/1 = SubResource("TileSetAtlasSource_vyx71")
 
 [node name="Main" type="Node2D"]
 
-[node name="Menu" parent="." instance=ExtResource("5_q6khd")]
-z_index = 999
-script = ExtResource("2_dmreb")
-
-[node name="MarginContainer" type="MarginContainer" parent="Menu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -103.5
-offset_top = -64.0
-offset_right = 103.5
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Label" type="Label" parent="Menu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 30
-text = "MENU"
-horizontal_alignment = 1
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Menu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="Save" type="Button" parent="Menu/MarginContainer/VBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "Save"
-
-[node name="Load" type="Button" parent="Menu/MarginContainer/VBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "Load"
-
-[node name="Exit" type="Button" parent="Menu/MarginContainer/VBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "Exit"
-
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_goqnc")]
@@ -218,6 +172,7 @@ position = Vector2(-163, 39)
 tile_map_data = PackedByteArray("AAD4//j/AQADAAMAAAD4//n/AQADAAQAAAD4//r/AQADAAUAAAD4//v/AQADAAYAAAD4//z/AQADAAcAAAD4//3/AQADAAgAAAD5//f/AQAEAAIAAAD5//j/AQAEAAMAAAD5//n/AQAEAAQAAAD5//r/AQAEAAUAAAD5//v/AQAEAAYAAAD5//z/AQAEAAcAAAD5//3/AQAEAAgAAAD5//7/AQAEAAkAAAD5////AQAEAAoAAAD5/wAAAQAEAAsAAAD5/wEAAQAEAAwAAAD5/wIAAQAEAA0AAAD6//b/AQAFAAEAAAD6//f/AQAFAAIAAAD6//j/AQAFAAMAAAD6//n/AQAFAAQAAAD6//r/AQAFAAUAAAD6//v/AQAFAAYAAAD6//z/AQAFAAcAAAD6//3/AQAFAAgAAAD6//7/AQAFAAkAAAD6////AQAFAAoAAAD6/wAAAQAFAAsAAAD6/wEAAQAFAAwAAAD7//b/AQAGAAEAAAD7//f/AQAGAAIAAAD7//j/AQAGAAMAAAD7//n/AQAGAAQAAAD7//r/AQAGAAUAAAD7//v/AQAGAAYAAAD7//z/AQAGAAcAAAD7//3/AQAGAAgAAAD7//7/AQAGAAkAAAD7////AQAGAAoAAAD7/wAAAQAGAAsAAAD7/wEAAQAGAAwAAAD8//X/AQAHAAAAAAD8//b/AQAHAAEAAAD8//f/AQAHAAIAAAD8//j/AQAHAAMAAAD8//n/AQAHAAQAAAD8//r/AQAHAAUAAAD8//v/AQAHAAYAAAD8//z/AQAHAAcAAAD8//3/AQAHAAgAAAD8//7/AQAHAAkAAAD8////AQAHAAoAAAD8/wAAAQAHAAsAAAD8/wEAAQAHAAwAAAD9//b/AQAIAAEAAAD9//f/AQAIAAIAAAD9//j/AQAIAAMAAAD9//n/AQAIAAQAAAD9//r/AQAIAAUAAAD9//v/AQAIAAYAAAD9//z/AQAIAAcAAAD9//3/AQAIAAgAAAD9//7/AQAIAAkAAAD9////AQAIAAoAAAD9/wAAAQAIAAsAAAD9/wEAAQAIAAwAAAD+//f/AQAJAAIAAAD+//j/AQAJAAMAAAD+//n/AQAJAAQAAAD+//r/AQAJAAUAAAD+//v/AQAJAAYAAAD+//z/AQAJAAcAAAD+//3/AQAJAAgAAAD+//7/AQAJAAkAAAD+////AQAJAAoAAAD+/wAAAQAJAAsAAAD+/wEAAQAJAAwAAAD///j/AQAKAAMAAAD///n/AQAKAAQAAAD///r/AQAKAAUAAAD///v/AQAKAAYAAAD///z/AQAKAAcAAAD///3/AQAKAAgAAAD///7/AQAKAAkAAAD/////AQAKAAoAAAD//wAAAQAKAAsAAAD//wEAAQAKAAwAAAD//wIAAQAKAA0AAAA=")
 tile_set = SubResource("TileSet_6j0mf")
 
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/VBoxContainer2/Save" to="Menu" method="_on_save_pressed"]
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/VBoxContainer2/Load" to="Menu" method="_on_load_pressed"]
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/VBoxContainer2/Exit" to="Menu" method="_on_exit_pressed"]
+[node name="PotionMakeMenu" type="Node2D" parent="."]
+
+[node name="GameMenu" parent="." instance=ExtResource("7_m4he7")]
+z_index = 999
