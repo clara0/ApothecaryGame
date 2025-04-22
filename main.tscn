@@ -115,39 +115,33 @@ texture_region_size = Vector2i(32, 32)
 4:10/0 = 0
 4:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.25, -16, 16, -16, 16, 16, -14.125, 16)
 5:10/0 = 0
+5:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 6:10/0 = 0
+6:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:10/0 = 0
+7:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 8:10/0 = 0
+8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 9:10/0 = 0
+9:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 10:10/0 = 0
 10:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -7.125, -16, -6.875, 16, -16, 16)
 4:11/0 = 0
-4:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.25, -16, 16, -16, 16, 16, -14.125, 16)
 5:11/0 = 0
 6:11/0 = 0
 7:11/0 = 0
 8:11/0 = 0
 9:11/0 = 0
 10:11/0 = 0
-10:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -7.125, -16, -6.875, 16, -16, 16)
 4:12/0 = 0
-4:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.25, -16, 16, -16, 16, 16, -14.125, 16)
 5:12/0 = 0
-5:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 11.25, -16, 11.125)
 6:12/0 = 0
-6:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 11.25, -16, 11.125)
 7:12/0 = 0
-7:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 11.25, -16, 11.125)
 8:12/0 = 0
-8:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 11.25, -16, 11.125)
 9:12/0 = 0
-9:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 11.25, -16, 11.125)
 10:12/0 = 0
-10:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -7.125, -16, -6.875, 16, -16, 16)
 4:13/0 = 0
-4:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14, -16, -3.625, -16, -3.375, -11, -14.125, -10.875)
 10:13/0 = 0
-10:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 11.25, -16, 11.125)
 
 [sub_resource type="TileSet" id="TileSet_6j0mf"]
 tile_size = Vector2i(32, 32)
@@ -175,4 +169,5 @@ tile_set = SubResource("TileSet_6j0mf")
 [node name="PotionMakeMenu" type="Node2D" parent="."]
 
 [node name="GameMenu" parent="." instance=ExtResource("7_m4he7")]
+visible = false
 z_index = 999

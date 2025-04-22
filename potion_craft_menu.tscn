@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=3 uid="uid://hoh6415bdbik"]
+
+[ext_resource type="StyleBox" uid="uid://b2a0odtfhykvl" path="res://potion_craft_menu_box.tres" id="1_ysu0w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulux7"]
+bg_color = Color(0.706603, 0.77, 0.6699, 1)
+
+[node name="PotionCraftMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ulux7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="NotHotbar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="CreationDetails" type="VBoxContainer" parent="MarginContainer/VBoxContainer/NotHotbar"]
+custom_minimum_size = Vector2(250, 500)
+layout_mode = 2
+
+[node name="CreatingMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer/NotHotbar/CreationDetails"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="Creating" type="PanelContainer" parent="MarginContainer/VBoxContainer/NotHotbar/CreationDetails/CreatingMargin"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_ysu0w")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/NotHotbar/CreationDetails/CreatingMargin/Creating"]
+layout_mode = 2
+text = "Creating:"
+
+[node name="ObjectiveMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer/NotHotbar/CreationDetails"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="Objective" type="PanelContainer" parent="MarginContainer/VBoxContainer/NotHotbar/CreationDetails/ObjectiveMargin"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_ysu0w")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/NotHotbar/CreationDetails/ObjectiveMargin/Objective"]
+layout_mode = 2
+text = "Objective:"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/NotHotbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Tools" type="VBoxContainer" parent="MarginContainer/VBoxContainer/NotHotbar"]
+custom_minimum_size = Vector2(250, 500)
+layout_mode = 2
+
+[node name="ToolSelectMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer/NotHotbar/Tools"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/NotHotbar/Tools/ToolSelectMargin"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_ysu0w")
+
+[node name="Hotbar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3

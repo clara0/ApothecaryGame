@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5orw"]
 radius = 13.3333
-height = 37.3333
+height = 52.0
 
 [sub_resource type="Animation" id="Animation_bav0c"]
 length = 0.001
@@ -106,6 +106,7 @@ _data = {
 [node name="Player" type="CharacterBody2D" groups=["Persist"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.5, 1.5)
 shape = SubResource("CapsuleShape2D_t5orw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
