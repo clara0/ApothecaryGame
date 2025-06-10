@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://w1u8cbkwbqho"]
 
 [ext_resource type="Script" path="res://scenes/inventory/player_inv.gd" id="1_mqmqm"]
-[ext_resource type="Texture2D" uid="uid://c68y3kmdv6gci" path="res://graphics/pixil-frame-0.png" id="2_h5fxq"]
+[ext_resource type="Texture2D" uid="uid://c68y3kmdv6gci" path="res://graphics/sad_inv_bgd.png" id="2_h5fxq"]
 [ext_resource type="PackedScene" uid="uid://ci45byn7gpeqr" path="res://scenes/inventory/slot.tscn" id="3_dtvsx"]
 
 [node name="player_inv" type="Control"]

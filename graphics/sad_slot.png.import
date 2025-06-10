@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bojy7epcvp1jo"
-path="res://.godot/imported/pixil-frame-0 (1).png-f2a814bd1f34fe34670985c8434359e3.ctex"
+path="res://.godot/imported/sad_slot.png-f7a1ad6549b9000662637c4e57b0a9be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/pixil-frame-0 (1).png"
-dest_files=["res://.godot/imported/pixil-frame-0 (1).png-f2a814bd1f34fe34670985c8434359e3.ctex"]
+source_file="res://graphics/sad_slot.png"
+dest_files=["res://.godot/imported/sad_slot.png-f7a1ad6549b9000662637c4e57b0a9be.ctex"]
 
 [params]
 

@@ -1,9 +1,12 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=3 format=3 uid="uid://ccnc7pxrcbm6c"]
+[gd_resource type="Resource" script_class="Inv" load_steps=6 format=3 uid="uid://ccnc7pxrcbm6c"]
 
 [ext_resource type="Script" path="res://inventory/inv_item.gd" id="1_yg0vi"]
+[ext_resource type="Resource" uid="uid://deywg2jc0fhke" path="res://inventory/items/chamomile.tres" id="2_r2dgo"]
 [ext_resource type="Script" path="res://inventory/inventory.gd" id="2_vtbwh"]
+[ext_resource type="Resource" uid="uid://dddicmhcggj45" path="res://inventory/items/dandelion.tres" id="3_0obwj"]
+[ext_resource type="Resource" uid="uid://dua6onebj674r" path="res://inventory/items/poppy.tres" id="4_8qtww"]
 
 [resource]
 script = ExtResource("2_vtbwh")
 name = ""
-inv_items = Array[ExtResource("1_yg0vi")]([])
+inv_items = Array[ExtResource("1_yg0vi")]([ExtResource("2_r2dgo"), ExtResource("3_0obwj"), ExtResource("4_8qtww")])

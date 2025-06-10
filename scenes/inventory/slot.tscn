@@ -1,18 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci45byn7gpeqr"]
+[gd_scene load_steps=3 format=3 uid="uid://ci45byn7gpeqr"]
 
-[ext_resource type="Texture2D" uid="uid://bojy7epcvp1jo" path="res://graphics/pixil-frame-0 (1).png" id="1_ucsda"]
+[ext_resource type="Script" path="res://scenes/inventory/slot.gd" id="1_a7gqx"]
+[ext_resource type="Texture2D" uid="uid://bojy7epcvp1jo" path="res://graphics/sad_slot.png" id="1_ucsda"]
 
 [node name="Slot" type="Control"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a7gqx")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_ucsda")
+centered = false
+
+[node name="Quantity" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1072.0
-offset_bottom = -568.0
+offset_left = -1.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ucsda")
+[node name="Item" type="Sprite2D" parent="Control"]
 centered = false

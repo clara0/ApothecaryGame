@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://dddicmhcggj45"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dddicmhcggj45"]
 
 [ext_resource type="Script" path="res://inventory/inv_item.gd" id="1_fdab8"]
+[ext_resource type="Texture2D" uid="uid://b5e5f3jxb137o" path="res://graphics/items/dandelion.png" id="2_kxdhu"]
 
 [resource]
 script = ExtResource("1_fdab8")
 name = ""
+texture = ExtResource("2_kxdhu")
 quant = 0
 desc = ""
