@@ -21,7 +21,7 @@ func load_game() -> void:
 		
 	var	save_file = FileAccess.open("user://save/game.save", FileAccess.READ)
 	var save_nodes : Array = get_tree().get_nodes_in_group("Persist")
-
+	
 	for node : Node in save_nodes:
 		var json_str = save_file.get_line()
 		var json = JSON.new()
@@ -30,6 +30,6 @@ func load_game() -> void:
 		if not parse_result == OK:
 			print("JSON Parse Error: ", json.get_error_message(), " in ", json_str, " at line ", json.get_error_line())
 			continue
-
+		
 		var node_data = json.data
 		node.load(node_data)

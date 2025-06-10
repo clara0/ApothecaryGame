@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://deywg2jc0fhke"]
+
+[ext_resource type="Script" path="res://inventory/inv_item.gd" id="1_a18yr"]
+[ext_resource type="Texture2D" uid="uid://jyq71bace210" path="res://graphics/items/chamomile.png" id="2_vip1j"]
+
+[resource]
+script = ExtResource("1_a18yr")
+name = "chamomile"
+texture = ExtResource("2_vip1j")
+quant = 0
+desc = "nice for tea"

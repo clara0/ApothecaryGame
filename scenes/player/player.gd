@@ -1,6 +1,13 @@
 extends CharacterBody2D
 
-enum Anim {IDLE, UP, DOWN, RIGHT, LEFT}
+enum Anim {
+	IDLE, 
+	UP, 
+	DOWN, 
+	RIGHT, 
+	LEFT,
+}
+
 var _anim_states = {
 	0 : "idle",
 	1 : "backward_walk",
@@ -10,12 +17,12 @@ var _anim_states = {
 }
 
 
-@onready var _animation_player = self.get_node("AnimationPlayer")
+@export var speed: int = 175
 var _curr_anim: Anim = Anim.IDLE
 var direction: Vector2 = Vector2.ZERO
-@export var speed: int = 175
+@onready var _animation_player = self.get_node("AnimationPlayer")
+@export var material_inv: Inv
 
-	
 func save() -> Dictionary:
 	print("Saving player...")
 	var data = {
@@ -25,8 +32,8 @@ func save() -> Dictionary:
 		"anim" = "idle", 
 	}
 	return data
-	
-	
+
+
 func pause() -> void:
 	_animation_player.stop
 

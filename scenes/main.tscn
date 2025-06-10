@@ -1,13 +1,16 @@
-[gd_scene load_steps=10 format=4 uid="uid://ysuhy6cl4fqh"]
+[gd_scene load_steps=13 format=4 uid="uid://ysuhy6cl4fqh"]
 
-[ext_resource type="PackedScene" uid="uid://f8sn0a0pa6k7" path="res://scenes/player/player.tscn" id="1_goqnc"]
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="2_53btb"]
-[ext_resource type="Texture2D" uid="uid://bqerarxqy7ceg" path="res://graphics/background/sketchy_road.png" id="3_r5h2w"]
-[ext_resource type="Texture2D" uid="uid://wbk1tvcfv121" path="res://graphics/background/npc_house_sorta_final.png" id="4_2o0ev"]
-[ext_resource type="PackedScene" uid="uid://co1hr67rpogvn" path="res://scenes/menus/game_menu.tscn" id="7_m4he7"]
+[ext_resource type="PackedScene" uid="uid://f8sn0a0pa6k7" path="res://scenes/player/player.tscn" id="1_404mn"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="2_2fvrx"]
+[ext_resource type="Texture2D" uid="uid://bqerarxqy7ceg" path="res://graphics/background/sketchy_road.png" id="3_r2222"]
+[ext_resource type="Texture2D" uid="uid://wbk1tvcfv121" path="res://graphics/background/npc_house_sorta_final.png" id="4_1hqu3"]
+[ext_resource type="Resource" uid="uid://ccnc7pxrcbm6c" path="res://inventory/mat_inv_player.tres" id="5_bekfm"]
+[ext_resource type="PackedScene" uid="uid://co1hr67rpogvn" path="res://scenes/menus/game_menu.tscn" id="5_swrxa"]
+[ext_resource type="PackedScene" uid="uid://hoh6415bdbik" path="res://scenes/menus/potion_craft_menu.tscn" id="6_lvwsc"]
+[ext_resource type="PackedScene" uid="uid://w1u8cbkwbqho" path="res://scenes/inventory/player_inv.tscn" id="8_grqsx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_krdq4"]
-texture = ExtResource("3_r5h2w")
+texture = ExtResource("3_r2222")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -18,7 +21,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_krdq4")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vyx71"]
-texture = ExtResource("4_2o0ev")
+texture = ExtResource("4_1hqu3")
 texture_region_size = Vector2i(32, 32)
 7:0/0 = 0
 7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 13, -12.625, 8.75, -7, 8.875, -1.125, 16, -16, 16)
@@ -152,10 +155,6 @@ sources/1 = SubResource("TileSetAtlasSource_vyx71")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("1_goqnc")]
-z_index = 1
-script = ExtResource("2_53btb")
-
 [node name="BackgroundG" type="TileMapLayer" parent="."]
 position = Vector2(-131, 84)
 tile_map_data = PackedByteArray("AAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAABAAIAAAAAAAAAAAABAAEAAAAAAAAAAAA=")
@@ -166,8 +165,17 @@ position = Vector2(-163, 39)
 tile_map_data = PackedByteArray("AAD4//j/AQADAAMAAAD4//n/AQADAAQAAAD4//r/AQADAAUAAAD4//v/AQADAAYAAAD4//z/AQADAAcAAAD4//3/AQADAAgAAAD5//f/AQAEAAIAAAD5//j/AQAEAAMAAAD5//n/AQAEAAQAAAD5//r/AQAEAAUAAAD5//v/AQAEAAYAAAD5//z/AQAEAAcAAAD5//3/AQAEAAgAAAD5//7/AQAEAAkAAAD5////AQAEAAoAAAD5/wAAAQAEAAsAAAD5/wEAAQAEAAwAAAD5/wIAAQAEAA0AAAD6//b/AQAFAAEAAAD6//f/AQAFAAIAAAD6//j/AQAFAAMAAAD6//n/AQAFAAQAAAD6//r/AQAFAAUAAAD6//v/AQAFAAYAAAD6//z/AQAFAAcAAAD6//3/AQAFAAgAAAD6//7/AQAFAAkAAAD6////AQAFAAoAAAD6/wAAAQAFAAsAAAD6/wEAAQAFAAwAAAD7//b/AQAGAAEAAAD7//f/AQAGAAIAAAD7//j/AQAGAAMAAAD7//n/AQAGAAQAAAD7//r/AQAGAAUAAAD7//v/AQAGAAYAAAD7//z/AQAGAAcAAAD7//3/AQAGAAgAAAD7//7/AQAGAAkAAAD7////AQAGAAoAAAD7/wAAAQAGAAsAAAD7/wEAAQAGAAwAAAD8//X/AQAHAAAAAAD8//b/AQAHAAEAAAD8//f/AQAHAAIAAAD8//j/AQAHAAMAAAD8//n/AQAHAAQAAAD8//r/AQAHAAUAAAD8//v/AQAHAAYAAAD8//z/AQAHAAcAAAD8//3/AQAHAAgAAAD8//7/AQAHAAkAAAD8////AQAHAAoAAAD8/wAAAQAHAAsAAAD8/wEAAQAHAAwAAAD9//b/AQAIAAEAAAD9//f/AQAIAAIAAAD9//j/AQAIAAMAAAD9//n/AQAIAAQAAAD9//r/AQAIAAUAAAD9//v/AQAIAAYAAAD9//z/AQAIAAcAAAD9//3/AQAIAAgAAAD9//7/AQAIAAkAAAD9////AQAIAAoAAAD9/wAAAQAIAAsAAAD9/wEAAQAIAAwAAAD+//f/AQAJAAIAAAD+//j/AQAJAAMAAAD+//n/AQAJAAQAAAD+//r/AQAJAAUAAAD+//v/AQAJAAYAAAD+//z/AQAJAAcAAAD+//3/AQAJAAgAAAD+//7/AQAJAAkAAAD+////AQAJAAoAAAD+/wAAAQAJAAsAAAD+/wEAAQAJAAwAAAD///j/AQAKAAMAAAD///n/AQAKAAQAAAD///r/AQAKAAUAAAD///v/AQAKAAYAAAD///z/AQAKAAcAAAD///3/AQAKAAgAAAD///7/AQAKAAkAAAD/////AQAKAAoAAAD//wAAAQAKAAsAAAD//wEAAQAKAAwAAAD//wIAAQAKAA0AAAA=")
 tile_set = SubResource("TileSet_6j0mf")
 
-[node name="PotionMakeMenu" type="Node2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("1_404mn")]
+script = ExtResource("2_2fvrx")
+material_inv = ExtResource("5_bekfm")
 
-[node name="GameMenu" parent="." instance=ExtResource("7_m4he7")]
+[node name="PotionCraftMenu" parent="." instance=ExtResource("6_lvwsc")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerInv" parent="CanvasLayer" instance=ExtResource("8_grqsx")]
+
+[node name="GameMenu" parent="CanvasLayer" instance=ExtResource("5_swrxa")]
 visible = false
 z_index = 999
