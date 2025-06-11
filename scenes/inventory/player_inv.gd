@@ -13,16 +13,21 @@ func _ready() -> void:
 	
 func update_slots()	 -> void:
 	var num_items: int = inv.inv_items.size()
-	var num_slots: int = slots.size()
-	for i in range(min(num_items, num_slots)):
-		slots[i].update(inv.inv_items[i])
-	
-	
+	var i: int = 0
+	for s in slots:
+		if i >= num_items:
+			s.update(null)
+		else:
+			s.update(inv.inv_items[i])
+		i += 1
+
+
 func _process(delta) -> void:
 	if Input.is_action_just_pressed("inventory"):
 		if is_open:
 			close()
 		else:
+			update_slots()
 			open()
 
 

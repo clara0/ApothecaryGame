@@ -22,5 +22,5 @@ func to_json() -> Dictionary:
 func from_json(data: Dictionary) -> void:
 	name = data["name"]
 	texture = load(data["texture"])
-	quant = data["quant"]
+	quant = int(data["quant"])
 	desc = data["desc"]

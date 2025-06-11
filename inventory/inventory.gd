@@ -14,9 +14,10 @@ func to_json() -> Dictionary:
 
 
 func from_json(data: Dictionary) -> void:
+	inv_items.clear()
 	for k in data:
 		var item_data: Dictionary = data[k]
 		var item: InvItem = load(item_data["path"])
 		item.from_json(item_data)
-		if item_data["quant"] != 0:
+		if int(item_data["quant"]) != 0:
 			inv_items.append(item)
