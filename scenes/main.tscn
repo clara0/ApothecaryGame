@@ -175,6 +175,7 @@ visible = false
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PlayerInv" parent="CanvasLayer" instance=ExtResource("8_grqsx")]
+visible = false
 
 [node name="GameMenu" parent="CanvasLayer" instance=ExtResource("5_swrxa")]
 visible = false
