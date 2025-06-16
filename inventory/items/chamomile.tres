@@ -7,5 +7,5 @@
 script = ExtResource("1_a18yr")
 name = "chamomile"
 texture = ExtResource("2_vip1j")
-quant = 0
+quant = 3
 desc = "nice for tea"

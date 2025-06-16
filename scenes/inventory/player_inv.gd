@@ -1,7 +1,7 @@
 extends Control
 
 @onready var inv = preload("res://inventory/mat_inv_player.tres")
-@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var slots: Array = $HSplitContainer/Inventory/GridContainer.get_children()
 	
 var is_open: bool = false
 
@@ -24,11 +24,9 @@ func update_slots()	 -> void:
 
 func _process(delta) -> void:
 	if Input.is_action_just_pressed("inventory"):
-		if is_open:
-			close()
-		else:
-			update_slots()
-			open()
+		update_slots()
+		visible = !visible
+		is_open = !is_open
 
 
 func close() -> void:
