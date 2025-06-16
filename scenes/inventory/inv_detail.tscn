@@ -12,6 +12,7 @@ offset_bottom = 460.0
 
 [node name="Detail" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(340, 460)
+layout_mode = 0
 texture = ExtResource("1_78105")
 patch_margin_left = 2
 patch_margin_top = 2

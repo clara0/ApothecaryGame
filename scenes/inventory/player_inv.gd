@@ -6,25 +6,25 @@ extends Control
 var is_open: bool = false
 
 func _ready() -> void:
-	print("ready")
+	inv.update.connect(update_slots)
 	update_slots()
 	close()
-	
-	
+
+
 func update_slots()	 -> void:
-	var num_items: int = inv.inv_items.size()
+	var num_items: int = inv.inv_slots.size()
 	var i: int = 0
 	for s in slots:
 		if i >= num_items:
 			s.update(null)
 		else:
-			s.update(inv.inv_items[i])
+			s.update(inv.inv_slots[i])
 		i += 1
 
 
 func _process(delta) -> void:
 	if Input.is_action_just_pressed("inventory"):
-		update_slots()
+		# update_slots()
 		visible = !visible
 		is_open = !is_open
 

@@ -72,3 +72,7 @@ func _process(_delta) -> void:
 func _physics_process(_delta) -> void:
 	velocity = direction * speed;
 	move_and_slide()
+
+
+func collect(item: InvItem) -> void:
+	material_inv.add(item)
