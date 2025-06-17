@@ -25,7 +25,7 @@ var direction: Vector2 = Vector2.ZERO
 
 
 func pause() -> void:
-	_animation_player.stop
+	_animation_player.stop()
 
 
 func collect(item: InvItem) -> void:
