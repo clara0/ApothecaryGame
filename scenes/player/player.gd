@@ -28,26 +28,12 @@ func pause() -> void:
 	_animation_player.stop
 
 
-# save player state to JSON format
-func save() -> Dictionary:
-	print("Saving player...")
-	var data: Dictionary = {
-		"file": get_scene_file_path(),
-		"x": position.x,
-		"y": position.y,
-		"anim": "idle",
-		"mat_inv": material_inv.to_json(),
-	}
-	return data
+func collect(item: InvItem) -> void:
+	material_inv.add(item)
 
 
-# load data from save file
-func load(data : Dictionary) -> void:
-	print("Loading player...")
-	position.x = data["x"]
-	position.y = data["y"]
-	_animation_player.play(data["anim"])
-	material_inv.from_json(data["mat_inv"])
+func give(item: InvItem) -> InvItem:
+	return material_inv.sub(item)
 
 
 # runs once per frame
@@ -74,5 +60,23 @@ func _physics_process(_delta) -> void:
 	move_and_slide()
 
 
-func collect(item: InvItem) -> void:
-	material_inv.add(item)
+# save player state to JSON format
+func save() -> Dictionary:
+	print("Saving player...")
+	var data: Dictionary = {
+		"file": get_scene_file_path(),
+		"x": position.x,
+		"y": position.y,
+		"anim": "idle",
+		"mat_inv": material_inv.to_json(),
+	}
+	return data
+
+
+# load data from save file
+func load(data : Dictionary) -> void:
+	print("Loading player...")
+	position.x = data["x"]
+	position.y = data["y"]
+	_animation_player.play(data["anim"])
+	material_inv.from_json(data["mat_inv"])

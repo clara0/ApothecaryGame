@@ -13,6 +13,16 @@ var curr: int = 0
 	# order field in InvItem or use indices in inv_slots? 
 
 
+## Returns the slot containing a specified item.
+## Returns null if item does not exist in inventory or is null.
+func get_item(item: InvItem) -> InvSlot:
+	for s in inv_slots:
+		if s == item:
+			return s
+	return null
+
+
+## Adds an item to the inventory.
 func add(item: InvItem) -> void:
 	for s in inv_slots:
 		if s == item:
@@ -22,6 +32,22 @@ func add(item: InvItem) -> void:
 	inv_slots[curr].quant = 1
 	curr += 1
 	update.emit()
+
+
+## Removes a given amount of an item from the inventory. 
+## Returns the item removed on success. Removal is not performed if amount of
+## item to be removed exceeds amount in inventory.
+func sub(item: InvItem, amt: int = 1) -> InvItem:
+	var target: InvSlot = get_item(item)
+	if target != null:
+		if target.quant < amt:
+			return null
+		if target.quant > amt:
+			target.quant -= amt
+		else:
+			inv_slots.remove_at(1)
+		return target.item
+	return null
 
 
 func to_json() -> Dictionary:

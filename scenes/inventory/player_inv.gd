@@ -24,7 +24,6 @@ func update_slots()	 -> void:
 
 func _process(delta) -> void:
 	if Input.is_action_just_pressed("inventory"):
-		# update_slots()
 		visible = !visible
 		is_open = !is_open
 
