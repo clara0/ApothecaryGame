@@ -5,7 +5,6 @@
 
 [resource]
 script = ExtResource("1_uwd1t")
-name = "poppy"
+name = "Poppy"
 texture = ExtResource("2_k3kuq")
-quant = 0
-desc = "poppy plant"
+desc = "poppy plant :) nothing nefarious"

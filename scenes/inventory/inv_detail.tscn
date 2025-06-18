@@ -52,6 +52,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Item" type="Sprite2D" parent="Detail/MarginContainer/VBoxContainer/FocusItem/Icon/Control"]
+scale = Vector2(1.5, 1.5)
+centered = false
 
 [node name="VSplitContainer" type="VSplitContainer" parent="Detail/MarginContainer/VBoxContainer/FocusItem"]
 layout_mode = 2
@@ -108,7 +110,10 @@ theme_override_constants/margin_top = 10
 layout_mode = 2
 split_offset = 10
 
-[node name="Reputation" type="Label" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer/Stats"]
+[node name="Stats2" type="VBoxContainer" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer"]
+layout_mode = 2
+
+[node name="Reputation" type="Label" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer/Stats2"]
 custom_minimum_size = Vector2(190, 0)
 layout_mode = 2
 size_flags_vertical = 0
@@ -116,9 +121,16 @@ theme_override_font_sizes/font_size = 18
 text = "Reputation:"
 autowrap_mode = 2
 
-[node name="Happiness" type="Label" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer/Stats"]
+[node name="Happiness" type="Label" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer/Stats2"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 18
 text = "Happiness:
+"
+
+[node name="Money" type="Label" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer/Stats2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "$$$:
 "

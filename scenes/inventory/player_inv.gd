@@ -12,7 +12,8 @@ const num_rows: int = 5
 
 @onready var inv = preload("res://inventory/mat_inv_player.tres")
 @onready var slots: Array = $HSplitContainer/Inventory/GridContainer.get_children()
-	
+@onready var detail: Control = $HSplitContainer/Detail
+
 var is_open: bool = false
 var focus_slot: int = 0
 
@@ -65,10 +66,10 @@ func open() -> void:
 	slots[focus_slot].focus_off()
 	focus_slot = 0
 	slots[focus_slot].focus_on()
+	detail.load_slot(slots[focus_slot].get_slot())
 	
 	visible = true
 	is_open = true
-	
 
 
 func browse(action: Action) -> void:
@@ -87,3 +88,4 @@ func browse(action: Action) -> void:
 	focus_slot %= row_len * num_rows
 	slots[old_slot].focus_off()
 	slots[focus_slot].focus_on()
+	detail.load_slot(slots[focus_slot].get_slot())

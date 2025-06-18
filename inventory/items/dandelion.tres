@@ -5,7 +5,6 @@
 
 [resource]
 script = ExtResource("1_fdab8")
-name = ""
+name = "Dandelion"
 texture = ExtResource("2_kxdhu")
-quant = 0
-desc = ""
+desc = "tanpopo"
