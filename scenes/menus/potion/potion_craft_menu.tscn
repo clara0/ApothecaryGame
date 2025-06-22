@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://hoh6415bdbik"]
+
+[ext_resource type="PackedScene" uid="uid://ci7tgjpkfvwpw" path="res://scenes/menus/potion/ingredients.tscn" id="1_55jro"]
+[ext_resource type="Texture2D" uid="uid://c68y3kmdv6gci" path="res://graphics/ui/sad_inv_bgd.png" id="1_uhppn"]
+[ext_resource type="PackedScene" uid="uid://itee0yhi1hk3" path="res://scenes/menus/potion/objective.tscn" id="2_qip6n"]
+
+[node name="PotionCraftMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uhppn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VSplitContainer"]
+layout_mode = 2
+
+[node name="Objective" parent="MarginContainer/VSplitContainer/HBoxContainer" instance=ExtResource("2_qip6n")]
+layout_mode = 2
+
+[node name="Base" type="Control" parent="MarginContainer/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Tools" type="Control" parent="MarginContainer/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Ingredients" parent="MarginContainer/VSplitContainer" instance=ExtResource("1_55jro")]
+custom_minimum_size = Vector2(580, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8

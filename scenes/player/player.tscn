@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://f8sn0a0pa6k7"]
 
-[ext_resource type="Texture2D" uid="uid://dauywwfr7yyiu" path="res://graphics/player/bonnie_sprites_2.png" id="1_fnk66"]
+[ext_resource type="Texture2D" uid="uid://bu4c54ayvw8n7" path="res://graphics/player/spritesheet_final.PNG" id="1_tveg4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5orw"]
-radius = 13.3333
-height = 52.0
+radius = 5.2
+height = 24.0
 
 [sub_resource type="Animation" id="Animation_bav0c"]
 length = 0.001
@@ -18,42 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_hd6my"]
-resource_name = "back_walk"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [12, 13, 14, 15]
-}
-
-[sub_resource type="Animation" id="Animation_ho35g"]
-resource_name = "forward_walk"
-length = 0.8
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
+"values": [14]
 }
 
 [sub_resource type="Animation" id="Animation_6awif"]
@@ -76,6 +41,24 @@ tracks/0/keys = {
 "values": [4, 5, 6, 7]
 }
 
+[sub_resource type="Animation" id="Animation_ho35g"]
+resource_name = "forward_walk"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
 [sub_resource type="Animation" id="Animation_mcv52"]
 resource_name = "right_walk"
 length = 0.8
@@ -93,14 +76,31 @@ tracks/0/keys = {
 "values": [8, 9, 10, 11]
 }
 
+[sub_resource type="Animation" id="Animation_hd6my"]
+resource_name = "back_walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0u1y4"]
 _data = {
 "RESET": SubResource("Animation_bav0c"),
-"backward_walk": SubResource("Animation_hd6my"),
-"forward_walk": SubResource("Animation_ho35g"),
+"backward_walk": SubResource("Animation_mcv52"),
+"forward_walk": SubResource("Animation_hd6my"),
 "idle": SubResource("Animation_6awif"),
 "left_walk": SubResource("Animation_1fuea"),
-"right_walk": SubResource("Animation_mcv52")
+"right_walk": SubResource("Animation_ho35g")
 }
 
 [node name="Player" type="CharacterBody2D" groups=["Persist"]]
@@ -114,10 +114,11 @@ root_node = NodePath("../Sprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_0u1y4")
 }
+speed_scale = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(3, 3)
-texture = ExtResource("1_fnk66")
+texture = ExtResource("1_tveg4")
 hframes = 4
 vframes = 4
+frame = 14

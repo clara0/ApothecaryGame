@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 Persist="*res://singletons/persist.gd"
 
+[display]
+
+window/size/viewport_width=570
+window/size/viewport_height=320
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 Persist=""

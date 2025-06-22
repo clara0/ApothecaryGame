@@ -17,7 +17,7 @@ var _anim_states = {
 }
 
 
-@export var speed: int = 175
+@export var speed: int = 100
 var _curr_anim: Anim = Anim.IDLE
 var direction: Vector2 = Vector2.ZERO
 @onready var _animation_player = $AnimationPlayer
