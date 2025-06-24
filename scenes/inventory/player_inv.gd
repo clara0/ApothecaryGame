@@ -55,6 +55,7 @@ func _process(_delta) -> void:
 
 func close() -> void:
 	process_mode = Node.PROCESS_MODE_INHERIT
+	get_tree().paused = false
 	visible = false
 	is_open = false
 

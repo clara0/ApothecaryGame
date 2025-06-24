@@ -7,11 +7,11 @@
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 340.0
-offset_bottom = 460.0
+offset_right = 215.0
+offset_bottom = 240.0
 
 [node name="Detail" type="NinePatchRect" parent="."]
-custom_minimum_size = Vector2(340, 460)
+custom_minimum_size = Vector2(215, 240)
 layout_mode = 0
 texture = ExtResource("1_78105")
 patch_margin_left = 2
@@ -21,53 +21,53 @@ patch_margin_bottom = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Detail"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+offset_right = 215.0
+offset_bottom = 240.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Detail/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 5
 
 [node name="FocusItem" type="HSplitContainer" parent="Detail/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Icon" type="Control" parent="Detail/MarginContainer/VBoxContainer/FocusItem"]
-custom_minimum_size = Vector2(120, 120)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Background" type="Sprite2D" parent="Detail/MarginContainer/VBoxContainer/FocusItem/Icon"]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_8ra1e")
 centered = false
 
 [node name="Control" type="Control" parent="Detail/MarginContainer/VBoxContainer/FocusItem/Icon"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 60.0
+offset_bottom = 80.0
 
 [node name="Item" type="Sprite2D" parent="Detail/MarginContainer/VBoxContainer/FocusItem/Icon/Control"]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.75, 0.75)
 centered = false
 
 [node name="VSplitContainer" type="VSplitContainer" parent="Detail/MarginContainer/VBoxContainer/FocusItem"]
 layout_mode = 2
 
 [node name="Name" type="Label" parent="Detail/MarginContainer/VBoxContainer/FocusItem/VSplitContainer"]
-custom_minimum_size = Vector2(190, 0)
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 10
 text = "Placeholder Name"
 autowrap_mode = 2
 
 [node name="Quantity" type="Label" parent="Detail/MarginContainer/VBoxContainer/FocusItem/VSplitContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 10
 text = "1234"
 
 [node name="ItemDesc" type="MarginContainer" parent="Detail/MarginContainer/VBoxContainer"]
@@ -78,8 +78,9 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
 [node name="Desc" type="Label" parent="Detail/MarginContainer/VBoxContainer/ItemDesc"]
-custom_minimum_size = Vector2(310, 160)
+custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
+theme_override_font_sizes/font_size = 8
 text = "some random placeholder text description hello blahblah blah blahv uh huh yeah"
 autowrap_mode = 2
 
@@ -87,50 +88,46 @@ autowrap_mode = 2
 layout_mode = 2
 
 [node name="Face" type="Control" parent="Detail/MarginContainer/VBoxContainer/BonnieStats"]
-custom_minimum_size = Vector2(120, 120)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Control" type="Control" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/Face"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 50.0
+offset_bottom = 50.0
 
 [node name="Face" type="Sprite2D" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/Face/Control"]
-scale = Vector2(1.25, 1.25)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_nrb6n")
 centered = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Detail/MarginContainer/VBoxContainer/BonnieStats"]
 layout_mode = 2
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 5
 
-[node name="Stats" type="VSplitContainer" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer"]
-layout_mode = 2
-split_offset = 10
-
-[node name="Stats2" type="VBoxContainer" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer"]
+[node name="Stats" type="VBoxContainer" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer"]
 layout_mode = 2
 
-[node name="Reputation" type="Label" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer/Stats2"]
-custom_minimum_size = Vector2(190, 0)
+[node name="Reputation" type="Label" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer/Stats"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 8
 text = "Reputation:"
 autowrap_mode = 2
 
-[node name="Happiness" type="Label" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer/Stats2"]
+[node name="Happiness" type="Label" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer/Stats"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 8
 text = "Happiness:
 "
 
-[node name="Money" type="Label" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer/Stats2"]
+[node name="Money" type="Label" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer/Stats"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 8
 text = "$$$:
 "
