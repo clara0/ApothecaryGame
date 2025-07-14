@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://hoh6415bdbik"]
+[gd_scene load_steps=4 format=3 uid="uid://hoh6415bdbik"]
 
 [ext_resource type="PackedScene" uid="uid://ci7tgjpkfvwpw" path="res://scenes/menus/potion/ingredients.tscn" id="1_55jro"]
 [ext_resource type="Texture2D" uid="uid://c68y3kmdv6gci" path="res://graphics/ui/sad_inv_bgd.png" id="1_uhppn"]
 [ext_resource type="PackedScene" uid="uid://itee0yhi1hk3" path="res://scenes/menus/potion/objective.tscn" id="2_qip6n"]
-[ext_resource type="PackedScene" uid="uid://dj66r1jllwkao" path="res://scenes/menus/potion/tools.tscn" id="3_j12n4"]
 
 [node name="PotionCraftMenu" type="Control"]
 layout_mode = 3
@@ -51,9 +50,6 @@ layout_mode = 2
 
 [node name="Base" type="Control" parent="MarginContainer/VSplitContainer/HBoxContainer"]
 custom_minimum_size = Vector2(360, 0)
-layout_mode = 2
-
-[node name="Tools" parent="MarginContainer/VSplitContainer/HBoxContainer" instance=ExtResource("3_j12n4")]
 layout_mode = 2
 
 [node name="Ingredients" parent="MarginContainer/VSplitContainer" instance=ExtResource("1_55jro")]

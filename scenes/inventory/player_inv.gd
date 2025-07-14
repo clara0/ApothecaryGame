@@ -85,8 +85,14 @@ func browse(action: Action) -> void:
 		Action.DOWN:
 			focus_slot += row_len
 	
-	focus_slot += row_len * num_rows
-	focus_slot %= row_len * num_rows
+	if focus_slot < 0:
+		focus_slot = inv.inv_slots.size() - 1
+	elif focus_slot >= inv.inv_slots.size():
+		focus_slot = 0
+	else:
+		focus_slot += row_len * num_rows
+		focus_slot %= row_len * num_rows
+	
 	slots[old_slot].focus_off()
 	slots[focus_slot].focus_on()
 	detail.load_slot(slots[focus_slot].get_slot())
