@@ -15,7 +15,7 @@ func load_slot(slot: InvSlot) -> void:
 		image.texture = null
 		name_label.text = "There is Nothing Here"
 		quantity.text = "0"
-		desc.text = "N o t h i n g"
+		desc.text = "filler text filler text this shouldn't show up"
 		return
 	image.texture = slot.item.texture
 	name_label.text = slot.item.name
