@@ -6,12 +6,33 @@
 layout_mode = 3
 anchors_preset = 0
 
-[node name="VSplitContainer" type="VSplitContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 120.0
-offset_bottom = 202.0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Current" type="NinePatchRect" parent="VSplitContainer"]
+[node name="Title" type="NinePatchRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+texture = ExtResource("1_thdih")
+
+[node name="Label" type="Label" parent="VBoxContainer/Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = -11.5
+offset_right = 36.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Details
+"
+
+[node name="Target" type="NinePatchRect" parent="VBoxContainer"]
 custom_minimum_size = Vector2(120, 95)
 layout_mode = 2
 texture = ExtResource("1_thdih")
@@ -20,7 +41,7 @@ patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/Current"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Target"]
 custom_minimum_size = Vector2(120, 95)
 layout_mode = 0
 offset_right = 40.0
@@ -30,48 +51,49 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VSplitContainer" type="VSplitContainer" parent="VSplitContainer/Current/MarginContainer"]
+[node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer/Target/MarginContainer"]
 layout_mode = 2
 
-[node name="Potion" type="Label" parent="VSplitContainer/Current/MarginContainer/VSplitContainer"]
+[node name="Request" type="Label" parent="VBoxContainer/Target/MarginContainer/VSplitContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Request"
+
+[node name="Desc" type="Label" parent="VBoxContainer/Target/MarginContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+
+[node name="Current" type="NinePatchRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(120, 95)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("1_thdih")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Current"]
+custom_minimum_size = Vector2(120, 95)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer/Current/MarginContainer"]
+layout_mode = 2
+
+[node name="Potion" type="Label" parent="VBoxContainer/Current/MarginContainer/VSplitContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "Potion Name
 "
 
-[node name="Contents" type="Label" parent="VSplitContainer/Current/MarginContainer/VSplitContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 8
-
-[node name="Target" type="NinePatchRect" parent="VSplitContainer"]
-custom_minimum_size = Vector2(120, 95)
-layout_mode = 2
-texture = ExtResource("1_thdih")
-patch_margin_left = 2
-patch_margin_top = 2
-patch_margin_right = 2
-patch_margin_bottom = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/Target"]
-custom_minimum_size = Vector2(120, 95)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="VSplitContainer" type="VSplitContainer" parent="VSplitContainer/Target/MarginContainer"]
-layout_mode = 2
-
-[node name="Request" type="Label" parent="VSplitContainer/Target/MarginContainer/VSplitContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "Request"
-
-[node name="Desc" type="Label" parent="VSplitContainer/Target/MarginContainer/VSplitContainer"]
+[node name="Contents" type="Label" parent="VBoxContainer/Current/MarginContainer/VSplitContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 8

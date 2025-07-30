@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://hoh6415bdbik"]
+[gd_scene load_steps=7 format=3 uid="uid://hoh6415bdbik"]
 
 [ext_resource type="Script" path="res://scenes/menus/potion/potion_craft_menu.gd" id="1_3ri03"]
 [ext_resource type="PackedScene" uid="uid://ci7tgjpkfvwpw" path="res://scenes/menus/potion/ingredients.tscn" id="1_55jro"]
 [ext_resource type="Texture2D" uid="uid://c68y3kmdv6gci" path="res://graphics/ui/sad_inv_bgd.png" id="1_uhppn"]
 [ext_resource type="PackedScene" uid="uid://itee0yhi1hk3" path="res://scenes/menus/potion/objective.tscn" id="2_qip6n"]
 [ext_resource type="Script" path="res://scenes/menus/potion/ingredients.gd" id="4_hheok"]
+[ext_resource type="PackedScene" uid="uid://dpovu7aydog44" path="res://bonnie.tscn" id="4_i0umm"]
 
 [node name="PotionCraftMenu" type="Control"]
 layout_mode = 3
@@ -50,9 +51,14 @@ theme_override_constants/separation = 10
 [node name="Objective" parent="MarginContainer/VSplitContainer/HBoxContainer" instance=ExtResource("2_qip6n")]
 custom_minimum_size = Vector2(120, 100)
 layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="Base" type="Control" parent="MarginContainer/VSplitContainer/HBoxContainer"]
 custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Bonnie" parent="MarginContainer/VSplitContainer/HBoxContainer" instance=ExtResource("4_i0umm")]
 layout_mode = 2
 
 [node name="Ingredients" parent="MarginContainer/VSplitContainer" instance=ExtResource("1_55jro")]

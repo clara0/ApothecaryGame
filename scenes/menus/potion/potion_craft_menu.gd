@@ -2,6 +2,8 @@ extends Control
 
 
 var is_open: bool = false
+var objective_exist: bool = false
+
 @onready var ingredients: Control = $MarginContainer/VSplitContainer/Ingredients
 
 
