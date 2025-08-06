@@ -10,9 +10,10 @@ anchors_preset = 0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/separation = 4
 
 [node name="Title" type="NinePatchRect" parent="VBoxContainer"]
-custom_minimum_size = Vector2(120, 30)
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 texture = ExtResource("1_thdih")
 
@@ -33,7 +34,7 @@ text = "Details
 "
 
 [node name="Target" type="NinePatchRect" parent="VBoxContainer"]
-custom_minimum_size = Vector2(120, 95)
+custom_minimum_size = Vector2(120, 110)
 layout_mode = 2
 texture = ExtResource("1_thdih")
 patch_margin_left = 2
@@ -65,7 +66,7 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 8
 
 [node name="Current" type="NinePatchRect" parent="VBoxContainer"]
-custom_minimum_size = Vector2(120, 95)
+custom_minimum_size = Vector2(120, 110)
 layout_mode = 2
 size_flags_vertical = 0
 texture = ExtResource("1_thdih")

@@ -24,4 +24,4 @@ quant = 5
 [resource]
 script = ExtResource("2_vtbwh")
 name = ""
-inv_slots = Array[ExtResource("1_cx3ad")]([SubResource("Resource_vrrpd"), SubResource("Resource_k2exe"), SubResource("Resource_sp0gh"), null])
+inv_slots = Array[ExtResource("1_cx3ad")]([SubResource("Resource_vrrpd"), SubResource("Resource_k2exe"), SubResource("Resource_sp0gh")])

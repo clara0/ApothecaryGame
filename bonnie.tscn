@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpovu7aydog44"]
+[gd_scene load_steps=3 format=3 uid="uid://dpovu7aydog44"]
 
+[ext_resource type="Texture2D" uid="uid://bojy7epcvp1jo" path="res://graphics/ui/sad_slot.png" id="1_47p23"]
 [ext_resource type="Texture2D" uid="uid://buy6mr5ldf6ag" path="res://graphics/player/expressions/slight_irritation.png" id="1_uwu2e"]
 
 [node name="Bonnie" type="Control"]
-custom_minimum_size = Vector2(120, 100)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -17,17 +18,28 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -40.0
+offset_top = -20.0
 offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_47p23")
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/NinePatchRect"]
 texture = ExtResource("1_uwu2e")
+centered = false
