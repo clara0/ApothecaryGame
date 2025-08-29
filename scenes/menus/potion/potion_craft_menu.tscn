@@ -51,23 +51,28 @@ custom_minimum_size = Vector2(540, 340)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VSplitContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VSplitContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VSplitContainer/MarginContainer"]
 custom_minimum_size = Vector2(330, 260)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Objective" parent="MarginContainer/VSplitContainer/HBoxContainer" instance=ExtResource("2_qip6n")]
+[node name="Objective" parent="MarginContainer/VSplitContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_qip6n")]
 custom_minimum_size = Vector2(120, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Base" type="Control" parent="MarginContainer/VSplitContainer/HBoxContainer"]
+[node name="Base" type="Control" parent="MarginContainer/VSplitContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Bonnie" parent="MarginContainer/VSplitContainer/HBoxContainer" instance=ExtResource("4_i0umm")]
+[node name="Bonnie" parent="MarginContainer/VSplitContainer/MarginContainer/HBoxContainer" instance=ExtResource("4_i0umm")]
 layout_mode = 2
 size_flags_vertical = 8
 

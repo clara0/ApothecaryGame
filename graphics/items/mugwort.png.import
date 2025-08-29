@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blxlhe4srfthp"
-path="res://.godot/imported/plant.png-7aa3c681b22008b05b682decb661587b.ctex"
+path="res://.godot/imported/mugwort.png-caadd18911569a776245d281e80e8b82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/items/plant.png"
-dest_files=["res://.godot/imported/plant.png-7aa3c681b22008b05b682decb661587b.ctex"]
+source_file="res://graphics/items/mugwort.png"
+dest_files=["res://.godot/imported/mugwort.png-caadd18911569a776245d281e80e8b82.ctex"]
 
 [params]
 
