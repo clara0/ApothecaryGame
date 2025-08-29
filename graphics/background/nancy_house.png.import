@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wbk1tvcfv121"
-path="res://.godot/imported/npc_house_sorta_final.png-a729c9b3b1706213a01bca1e442560bd.ctex"
+uid="uid://dqalsv0dgy6xy"
+path="res://.godot/imported/nancy_house.png-209a4ae539554348943576400c0dee2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/background/npc_house_sorta_final.png"
-dest_files=["res://.godot/imported/npc_house_sorta_final.png-a729c9b3b1706213a01bca1e442560bd.ctex"]
+source_file="res://graphics/background/nancy_house.png"
+dest_files=["res://.godot/imported/nancy_house.png-209a4ae539554348943576400c0dee2a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bojy7epcvp1jo"
-path="res://.godot/imported/sad_slot.png-d28da18a87a20463eea91c54be186a49.ctex"
+uid="uid://b03mmd8oobsnw"
+path="res://.godot/imported/npc_house_open.png-d07f5f4939c4734b59e6a8252dde0158.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/ui/sad_slot.png"
-dest_files=["res://.godot/imported/sad_slot.png-d28da18a87a20463eea91c54be186a49.ctex"]
+source_file="res://graphics/background/npc_house_open.png"
+dest_files=["res://.godot/imported/npc_house_open.png-d07f5f4939c4734b59e6a8252dde0158.ctex"]
 
 [params]
 

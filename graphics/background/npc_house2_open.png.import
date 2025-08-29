@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cicdubfurva3t"
-path="res://.godot/imported/house-removebg-preview.png-03f63846c7ac2d837443ceed7cacfcde.ctex"
+uid="uid://ckqpmpvihoicp"
+path="res://.godot/imported/npc_house2_open.png-8b1d0bb33d5b6191a4e2ae8ad0fb87c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/background/house-removebg-preview.png"
-dest_files=["res://.godot/imported/house-removebg-preview.png-03f63846c7ac2d837443ceed7cacfcde.ctex"]
+source_file="res://graphics/background/npc_house2_open.png"
+dest_files=["res://.godot/imported/npc_house2_open.png-8b1d0bb33d5b6191a4e2ae8ad0fb87c1.ctex"]
 
 [params]
 
