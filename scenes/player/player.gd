@@ -16,12 +16,12 @@ var _anim_states = {
 	4: "left_walk",
 }
 
-
 @export var speed: int = 100
 var _curr_anim: Anim = Anim.IDLE
 var direction: Vector2 = Vector2.ZERO
 @onready var _animation_player = $AnimationPlayer
 @export var material_inv: Inv
+@export var stats: Stats
 
 
 func pause() -> void:
@@ -34,7 +34,7 @@ func collect(item: InvItem) -> void:
 
 func give(item: InvItem) -> InvItem:
 	return material_inv.sub(item)
-
+	
 
 # runs once per frame
 func _process(_delta) -> void:
@@ -69,6 +69,7 @@ func save() -> Dictionary:
 		"y": position.y,
 		"anim": "idle",
 		"mat_inv": material_inv.to_json(),
+		"stats": stats.to_json(),
 	}
 	return data
 
@@ -80,3 +81,4 @@ func load(data : Dictionary) -> void:
 	position.y = data["y"]
 	_animation_player.play(data["anim"])
 	material_inv.from_json(data["mat_inv"])
+	stats.from_json(data["stats"])

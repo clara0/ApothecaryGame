@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://w1u8cbkwbqho"]
 
-[ext_resource type="Script" path="res://scenes/inventory/player_inv.gd" id="1_mqmqm"]
+[ext_resource type="Script" uid="uid://boe5tqjb6limh" path="res://scenes/inventory/player_inv.gd" id="1_mqmqm"]
 [ext_resource type="Texture2D" uid="uid://c68y3kmdv6gci" path="res://graphics/ui/sad_inv_bgd.png" id="2_h5fxq"]
 [ext_resource type="PackedScene" uid="uid://ci45byn7gpeqr" path="res://scenes/inventory/slot.tscn" id="3_dtvsx"]
-[ext_resource type="Script" path="res://scenes/inventory/inv_detail.gd" id="5_55ho3"]
+[ext_resource type="Script" uid="uid://w83m2ip1nkwu" path="res://scenes/inventory/inv_detail.gd" id="5_55ho3"]
 [ext_resource type="PackedScene" uid="uid://b401p3j1k6oaa" path="res://scenes/inventory/inv_detail.tscn" id="5_sonl1"]
 
 [node name="player_inv" type="Control"]

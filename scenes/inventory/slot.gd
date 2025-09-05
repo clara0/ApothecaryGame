@@ -1,7 +1,7 @@
 extends Control
 
 @onready var item_img: Sprite2D = $Control/Item
-@onready var focus: Sprite2D = $Focus
+@onready var focus: NinePatchRect = $Focus
 @onready var item_quant: Label = $Quantity
 var _inv_slot: InvSlot
 

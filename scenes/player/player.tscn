@@ -95,12 +95,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0u1y4"]
 _data = {
-"RESET": SubResource("Animation_bav0c"),
-"backward_walk": SubResource("Animation_mcv52"),
-"forward_walk": SubResource("Animation_hd6my"),
-"idle": SubResource("Animation_6awif"),
-"left_walk": SubResource("Animation_1fuea"),
-"right_walk": SubResource("Animation_ho35g")
+&"RESET": SubResource("Animation_bav0c"),
+&"backward_walk": SubResource("Animation_mcv52"),
+&"forward_walk": SubResource("Animation_hd6my"),
+&"idle": SubResource("Animation_6awif"),
+&"left_walk": SubResource("Animation_1fuea"),
+&"right_walk": SubResource("Animation_ho35g")
 }
 
 [node name="Player" type="CharacterBody2D" groups=["Persist"]]

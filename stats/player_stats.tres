@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://dpoma8v12qm27"]
+
+[ext_resource type="Script" uid="uid://b674ikcfhdq1l" path="res://stats/stats.gd" id="1_tceoj"]
+
+[resource]
+script = ExtResource("1_tceoj")
+happiness = 0
+reputation = 0
+coins = 0
+metadata/_custom_type_script = "uid://b674ikcfhdq1l"
