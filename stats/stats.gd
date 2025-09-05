@@ -7,16 +7,19 @@ class_name Stats
 @export var coins: int = 0
 
 
-func happ_change(val: int):
+func happ_change(val: int) -> int:
 	happiness += val
+	return happiness
 
 
-func rep_change(val: int):
+func rep_change(val: int) -> int:
 	reputation += val
+	return reputation
 
 
-func coin_change(val: int):
+func coin_change(val: int) -> int:
 	coins += val
+	return coins
 
 
 func to_json() -> Dictionary:

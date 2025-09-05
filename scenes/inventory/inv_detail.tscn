@@ -11,7 +11,7 @@ offset_right = 215.0
 offset_bottom = 240.0
 
 [node name="Detail" type="NinePatchRect" parent="."]
-custom_minimum_size = Vector2(215, 240)
+custom_minimum_size = Vector2(215, 265)
 layout_mode = 0
 texture = ExtResource("1_78105")
 patch_margin_left = 2
@@ -22,7 +22,7 @@ patch_margin_bottom = 2
 [node name="MarginContainer" type="MarginContainer" parent="Detail"]
 layout_mode = 0
 offset_right = 215.0
-offset_bottom = 240.0
+offset_bottom = 265.0
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -44,6 +44,7 @@ size_flags_vertical = 4
 [node name="NinePatchRect" type="NinePatchRect" parent="Detail/MarginContainer/VBoxContainer/FocusItem/Icon"]
 texture_filter = 1
 custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_5o6uw")
