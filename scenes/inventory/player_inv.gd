@@ -10,8 +10,9 @@ enum Action {
 const row_len: int = 6
 const num_rows: int = 5
 
-@onready var inv = preload("res://inventory/mat_inv_player.tres")
-@onready var slots: Array = $HSplitContainer/Inventory/GridContainer.get_children()
+@onready var inv = preload("res://inventory/invs/mat_inv_player.tres")
+@onready var slots: Array = $HSplitContainer/Inventory/VBoxContainer/GridContainer.get_children()
+@onready var navbar: Array = $HSplitContainer/Inventory/VBoxContainer/Control.get_children()
 @onready var detail: Control = $HSplitContainer/Detail
 
 var is_open: bool = false

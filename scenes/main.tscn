@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://f8sn0a0pa6k7" path="res://scenes/player/player.tscn" id="1_404mn"]
 [ext_resource type="Script" uid="uid://bgl7tbyv2p2ux" path="res://scenes/player/player.gd" id="2_2fvrx"]
-[ext_resource type="Resource" uid="uid://ccnc7pxrcbm6c" path="res://inventory/mat_inv_player.tres" id="5_bekfm"]
+[ext_resource type="Resource" uid="uid://ccnc7pxrcbm6c" path="res://inventory/invs/mat_inv_player.tres" id="5_bekfm"]
 [ext_resource type="PackedScene" uid="uid://co1hr67rpogvn" path="res://scenes/menus/game_menu.tscn" id="5_swrxa"]
 [ext_resource type="PackedScene" uid="uid://hoh6415bdbik" path="res://scenes/menus/potion/potion_craft_menu.tscn" id="6_lvwsc"]
 [ext_resource type="Texture2D" uid="uid://dxwe7wll6ichw" path="res://graphics/background/bonnie_house.png" id="7_sr5wo"]

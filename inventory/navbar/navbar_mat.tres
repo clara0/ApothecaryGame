@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NavbarSlot" load_steps=3 format=3 uid="uid://edk65nkm2wxp"]
+
+[ext_resource type="Resource" uid="uid://ccnc7pxrcbm6c" path="res://inventory/invs/mat_inv_player.tres" id="1_japk4"]
+[ext_resource type="Script" uid="uid://tygdvloknfos" path="res://inventory/navbar_slot.gd" id="2_5wi27"]
+
+[resource]
+script = ExtResource("2_5wi27")
+name = "Materials"
+inv = ExtResource("1_japk4")
+metadata/_custom_type_script = "uid://tygdvloknfos"

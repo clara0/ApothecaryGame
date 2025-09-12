@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://boe5tqjb6limh" path="res://scenes/inventory/player_inv.gd" id="1_mqmqm"]
 [ext_resource type="Texture2D" uid="uid://c68y3kmdv6gci" path="res://graphics/ui/sad_inv_bgd.png" id="2_h5fxq"]
 [ext_resource type="PackedScene" uid="uid://ci45byn7gpeqr" path="res://scenes/inventory/slot.tscn" id="3_dtvsx"]
-[ext_resource type="PackedScene" uid="uid://chdecg4y2ifoq" path="res://scenes/inventory/navbar.tscn" id="3_evckj"]
+[ext_resource type="PackedScene" uid="uid://chdecg4y2ifoq" path="res://scenes/inventory/navbar/navbar.tscn" id="3_evckj"]
 [ext_resource type="Script" uid="uid://w83m2ip1nkwu" path="res://scenes/inventory/inv_detail.gd" id="5_55ho3"]
 [ext_resource type="PackedScene" uid="uid://b401p3j1k6oaa" path="res://scenes/inventory/inv_detail.tscn" id="5_sonl1"]
 
@@ -32,13 +32,13 @@ anchor_bottom = 0.5
 offset_left = -260.0
 offset_top = -120.0
 offset_right = 250.0
-offset_bottom = 145.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
 [node name="Inventory" type="NinePatchRect" parent="HSplitContainer"]
-custom_minimum_size = Vector2(285, 240)
+custom_minimum_size = Vector2(285, 280)
 layout_mode = 2
 texture = ExtResource("2_h5fxq")
 patch_margin_left = 2
@@ -49,12 +49,14 @@ patch_margin_bottom = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Inventory"]
 custom_minimum_size = Vector2(285, 265)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 285.0
+offset_bottom = 280.0
 theme_override_constants/separation = 4
 
 [node name="Control" parent="HSplitContainer/Inventory/VBoxContainer" instance=ExtResource("3_evckj")]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="GridContainer" type="GridContainer" parent="HSplitContainer/Inventory/VBoxContainer"]
 layout_mode = 2
