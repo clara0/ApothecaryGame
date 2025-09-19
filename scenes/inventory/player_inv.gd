@@ -24,6 +24,11 @@ func _ready() -> void:
 	close()
 
 
+func load_navbar() -> void:
+	for i in navbar:
+		i.update()
+
+
 func update_slots()	 -> void:
 	var num_items: int = inv.inv_slots.size()
 	var i: int = 0

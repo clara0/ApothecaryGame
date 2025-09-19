@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://w1u8cbkwbqho"]
 
-[ext_resource type="Script" uid="uid://boe5tqjb6limh" path="res://scenes/inventory/player_inv.gd" id="1_mqmqm"]
+[ext_resource type="Script" path="res://scenes/inventory/player_inv.gd" id="1_mqmqm"]
 [ext_resource type="Texture2D" uid="uid://c68y3kmdv6gci" path="res://graphics/ui/sad_inv_bgd.png" id="2_h5fxq"]
 [ext_resource type="PackedScene" uid="uid://ci45byn7gpeqr" path="res://scenes/inventory/slot.tscn" id="3_dtvsx"]
 [ext_resource type="PackedScene" uid="uid://chdecg4y2ifoq" path="res://scenes/inventory/navbar/navbar.tscn" id="3_evckj"]
-[ext_resource type="Script" uid="uid://w83m2ip1nkwu" path="res://scenes/inventory/inv_detail.gd" id="5_55ho3"]
+[ext_resource type="Script" path="res://scenes/inventory/inv_detail.gd" id="5_55ho3"]
 [ext_resource type="PackedScene" uid="uid://b401p3j1k6oaa" path="res://scenes/inventory/inv_detail.tscn" id="5_sonl1"]
 
 [node name="player_inv" type="Control"]
@@ -46,19 +46,26 @@ patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Inventory"]
-custom_minimum_size = Vector2(285, 265)
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/Inventory"]
 layout_mode = 0
 offset_right = 285.0
 offset_bottom = 280.0
+theme_override_constants/margin_top = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Inventory/MarginContainer"]
+custom_minimum_size = Vector2(285, 0)
+layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="Control" parent="HSplitContainer/Inventory/VBoxContainer" instance=ExtResource("3_evckj")]
+[node name="Navbar" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer" instance=ExtResource("3_evckj")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="GridContainer" type="GridContainer" parent="HSplitContainer/Inventory/VBoxContainer"]
+[node name="SpacingPurposes" type="Control" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -67,94 +74,94 @@ theme_override_constants/v_separation = 5
 columns = 6
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot2" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot2" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot3" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot3" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot4" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot4" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot5" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot5" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot6" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot6" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot7" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot7" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot8" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot8" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot9" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot9" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot10" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot10" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot11" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot11" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot12" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot12" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot13" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot13" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot14" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot14" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot15" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot15" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot16" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot16" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot17" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot17" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot18" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot18" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot19" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot19" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot20" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot20" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot21" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot21" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot22" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot22" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot23" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot23" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot24" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot24" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot25" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot25" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot26" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot26" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot27" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot27" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot28" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot28" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot29" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot29" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
-[node name="Slot30" parent="HSplitContainer/Inventory/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
+[node name="Slot30" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_dtvsx")]
 layout_mode = 2
 
 [node name="Detail" parent="HSplitContainer" instance=ExtResource("5_sonl1")]

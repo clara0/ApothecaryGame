@@ -1,8 +1,16 @@
-[gd_scene format=3 uid="uid://s3nhephjmyyi"]
+[gd_scene load_steps=2 format=3 uid="uid://s3nhephjmyyi"]
+
+[ext_resource type="Texture2D" uid="uid://cae41me2wlnxj" path="res://graphics/ui/navbar/Materials.png" id="1_sduti"]
 
 [node name="NavbarSlot" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -11,29 +19,59 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = -23.0
 offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_right = 17.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Name" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-
 [node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(37, 12)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Icon" type="Sprite2D" parent="VBoxContainer/Control"]
+[node name="Name" type="Label" parent="VBoxContainer/Control"]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.5
+offset_top = -6.0
+offset_right = 18.5
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+text = "materials
+"
+
+[node name="SpacingPurposes" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/CenterContainer/Control"]
+texture_filter = 1
+texture = ExtResource("1_sduti")
 
 [node name="FocusLine" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Line2D" type="Line2D" parent="VBoxContainer/FocusLine"]
-position = Vector2(0, -31)
-points = PackedVector2Array(-8, 0, 8, 0)
-width = 2.0
+visible = false
+points = PackedVector2Array(-6, 8, 6, 8)
+width = 1.0

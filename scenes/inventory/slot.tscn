@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ci45byn7gpeqr"]
 
-[ext_resource type="Script" uid="uid://v3pg02fv5pc2" path="res://scenes/inventory/slot.gd" id="1_a7gqx"]
-[ext_resource type="Texture2D" uid="uid://c76nm4x856xki" path="res://graphics/ui/inv_slot_trans.png" id="2_4s7ls"]
+[ext_resource type="Script" path="res://scenes/inventory/slot.gd" id="1_a7gqx"]
+[ext_resource type="Texture2D" uid="uid://c76nm4x856xki" path="res://graphics/ui/slot/inv_slot_trans.png" id="2_4s7ls"]
 [ext_resource type="Texture2D" uid="uid://dxjvauxb7mysx" path="res://graphics/items/ginger.png" id="3_su33r"]
-[ext_resource type="Texture2D" uid="uid://st8h5yxdi88j" path="res://graphics/ui/highlight.png" id="4_ck1dj"]
+[ext_resource type="Texture2D" uid="uid://st8h5yxdi88j" path="res://graphics/ui/slot/highlight.png" id="4_ck1dj"]
 
 [node name="Slot" type="Control"]
 custom_minimum_size = Vector2(40, 40)
