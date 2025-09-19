@@ -15,6 +15,10 @@ const num_rows: int = 5
 @onready var navbar: Array = $HSplitContainer/Inventory/VBoxContainer/Control.get_children()
 @onready var detail: Control = $HSplitContainer/Detail
 
+var navbar_slots: Array = [
+	preload("res://inventory/navbar/navbar_mat.tres"),
+]
+
 var is_open: bool = false
 var focus_slot: int = 0
 
@@ -25,8 +29,10 @@ func _ready() -> void:
 
 
 func load_navbar() -> void:
-	for i in navbar:
-		i.update()
+	var i: int = 0;
+	for s in navbar:
+		s.update(navbar_slots[i])
+		i += 1
 
 
 func update_slots()	 -> void:
