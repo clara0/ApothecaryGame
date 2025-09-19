@@ -26,13 +26,13 @@ offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="Name" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(37, 12)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Name" type="Label" parent="VBoxContainer/Control"]
+[node name="Label" type="Label" parent="VBoxContainer/Name"]
 visible = false
 texture_filter = 1
 layout_mode = 1
@@ -56,13 +56,13 @@ text = "materials
 custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+[node name="Icon" type="CenterContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="VBoxContainer/CenterContainer"]
+[node name="Control" type="Control" parent="VBoxContainer/Icon"]
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/CenterContainer/Control"]
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Icon/Control"]
 texture_filter = 1
 texture = ExtResource("1_sduti")
 

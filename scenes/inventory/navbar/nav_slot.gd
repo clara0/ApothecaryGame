@@ -1,19 +1,19 @@
 extends Node
 
-@onready var icon: Sprite2D = $VBoxContainer/Name
+@onready var icon: Sprite2D = $VBoxContainer/Icon/Control/Sprite2D
 @onready var focus_bar: Line2D = $VBoxContainer/FocusLine/Line2D
-@onready var label: Label = $VBoxContainer/Control/Icon
+@onready var label: Label = $VBoxContainer/Name/Label
 var _navbar_slot: NavbarSlot
 
 
 func _onready() -> void:
-	icon.texture = _navbar_slot.icon
-	label.text = _navbar_slot.name
 	hide()
 
 
 func update(navbar_slot: NavbarSlot) -> void:
 	_navbar_slot = navbar_slot
+	icon.texture = _navbar_slot.icon
+	label.text = _navbar_slot.name
 
 
 func display() -> void:

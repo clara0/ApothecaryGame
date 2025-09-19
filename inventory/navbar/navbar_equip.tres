@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NavbarSlot" load_steps=3 format=3 uid="uid://dvo1uyqcxvpw0"]
+
+[ext_resource type="Script" path="res://inventory/navbar_slot.gd" id="1_efwg8"]
+[ext_resource type="Texture2D" uid="uid://jisthm7py2br" path="res://graphics/ui/navbar/Equipments.png" id="1_jw4ka"]
+
+[resource]
+script = ExtResource("1_efwg8")
+name = "Equipment"
+icon = ExtResource("1_jw4ka")

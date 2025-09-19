@@ -10,7 +10,7 @@ const row_len: int = 6
 var focus_slot: int = 0
 var first_inv_item: int = 0 # inv item in first slot
 
-@onready var inv = preload("res://inventory/mat_inv_player.tres")
+@onready var inv = preload("res://inventory/invs/mat_inv_player.tres")
 @onready var slots = $GridContainer.get_children()
 
 

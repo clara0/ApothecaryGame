@@ -11,12 +11,15 @@ const row_len: int = 6
 const num_rows: int = 5
 
 @onready var inv = preload("res://inventory/invs/mat_inv_player.tres")
-@onready var slots: Array = $HSplitContainer/Inventory/VBoxContainer/GridContainer.get_children()
-@onready var navbar: Array = $HSplitContainer/Inventory/VBoxContainer/Control.get_children()
+@onready var slots: Array = $HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer.get_children()
+@onready var navbar: Array = $HSplitContainer/Inventory/MarginContainer/VBoxContainer/Navbar/MarginContainer/HBoxContainer.get_children()
 @onready var detail: Control = $HSplitContainer/Detail
 
 var navbar_slots: Array = [
 	preload("res://inventory/navbar/navbar_mat.tres"),
+	preload("res://inventory/navbar/navbar_pot.tres"),
+	preload("res://inventory/navbar/navbar_equip.tres"),
+	preload("res://inventory/navbar/navbar_item.tres"),
 ]
 
 var is_open: bool = false
@@ -24,6 +27,7 @@ var focus_slot: int = 0
 
 func _ready() -> void:
 	inv.update.connect(update_slots)
+	load_navbar()
 	update_slots()
 	close()
 

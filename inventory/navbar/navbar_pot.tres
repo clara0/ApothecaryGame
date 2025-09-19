@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NavbarSlot" load_steps=3 format=3 uid="uid://clxhufpaebdgk"]
+
+[ext_resource type="Script" path="res://inventory/navbar_slot.gd" id="1_8gxao"]
+[ext_resource type="Texture2D" uid="uid://8dj6fvcig557" path="res://graphics/ui/navbar/Potion.png" id="1_ccjvl"]
+
+[resource]
+script = ExtResource("1_8gxao")
+name = "Potions"
+icon = ExtResource("1_ccjvl")
