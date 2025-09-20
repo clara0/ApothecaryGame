@@ -12,12 +12,16 @@ extends Control
 
 func load_slot(slot: InvSlot) -> void:
 	if slot == null:
-		image.texture = null
-		name_label.text = "There is Nothing Here"
-		quantity.text = "0"
-		desc.text = "filler text filler text this shouldn't show up"
+		clear()
 		return
 	image.texture = slot.item.texture
 	name_label.text = slot.item.name
 	quantity.text = str(slot.quant)
 	desc.text = slot.item.desc
+
+
+func clear() -> void:
+	image.texture = null
+	name_label.text = "There is Nothing Here"
+	quantity.text = "0"
+	desc.text = "filler text filler text this shouldn't show up"
