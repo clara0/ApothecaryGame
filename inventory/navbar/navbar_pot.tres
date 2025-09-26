@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="NavbarSlot" load_steps=3 format=3 uid="uid://clxhufpaebdgk"]
+[gd_resource type="Resource" script_class="NavbarSlot" load_steps=4 format=3 uid="uid://clxhufpaebdgk"]
 
 [ext_resource type="Script" path="res://inventory/navbar_slot.gd" id="1_8gxao"]
 [ext_resource type="Texture2D" uid="uid://8dj6fvcig557" path="res://graphics/ui/navbar/Potion.png" id="1_ccjvl"]
+[ext_resource type="Resource" uid="uid://b4txf742ux0yf" path="res://inventory/invs/pot_inv_player.tres" id="2_os5rq"]
 
 [resource]
 script = ExtResource("1_8gxao")
 name = "Potions"
 icon = ExtResource("1_ccjvl")
+inv = ExtResource("2_os5rq")

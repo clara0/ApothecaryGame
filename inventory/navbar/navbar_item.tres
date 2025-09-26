@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="NavbarSlot" load_steps=3 format=3 uid="uid://dpkeoasbht7ay"]
+[gd_resource type="Resource" script_class="NavbarSlot" load_steps=4 format=3 uid="uid://dpkeoasbht7ay"]
 
 [ext_resource type="Script" path="res://inventory/navbar_slot.gd" id="1_c6xgm"]
 [ext_resource type="Texture2D" uid="uid://cnd7n5fcb7wu" path="res://graphics/ui/navbar/Quest.png" id="1_k65wp"]
+[ext_resource type="Resource" uid="uid://crbjmo3um6ppd" path="res://inventory/invs/item_inv_player.tres" id="2_kges1"]
 
 [resource]
 script = ExtResource("1_c6xgm")
 name = "Items"
 icon = ExtResource("1_k65wp")
+inv = ExtResource("2_kges1")

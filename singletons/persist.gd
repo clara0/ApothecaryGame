@@ -1,8 +1,15 @@
 extends Node
 
 
+func create_save_file(name: String) -> FileAccess:
+	var dir = DirAccess.open("user://save")
+	if !dir:
+		DirAccess.make_dir_recursive_absolute("user://save")
+	return FileAccess.open("user://save/" + name, FileAccess.WRITE)
+
+
 func save_game() -> void:
-	var	save_file = FileAccess.open("user://save/game.save", FileAccess.WRITE)
+	var	save_file = create_save_file("game.save")
 	var save_nodes : Array = get_tree().get_nodes_in_group("Persist")
 	
 	for node : Node in save_nodes:

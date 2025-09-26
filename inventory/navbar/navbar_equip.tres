@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="NavbarSlot" load_steps=3 format=3 uid="uid://dvo1uyqcxvpw0"]
+[gd_resource type="Resource" script_class="NavbarSlot" load_steps=4 format=3 uid="uid://dvo1uyqcxvpw0"]
 
 [ext_resource type="Script" path="res://inventory/navbar_slot.gd" id="1_efwg8"]
 [ext_resource type="Texture2D" uid="uid://jisthm7py2br" path="res://graphics/ui/navbar/Equipments.png" id="1_jw4ka"]
+[ext_resource type="Resource" uid="uid://cdvi6ta8jtdw0" path="res://inventory/invs/equip_inv_player.tres" id="2_3oebo"]
 
 [resource]
 script = ExtResource("1_efwg8")
 name = "Equipment"
 icon = ExtResource("1_jw4ka")
+inv = ExtResource("2_3oebo")

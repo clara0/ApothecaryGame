@@ -54,6 +54,7 @@ func enter_inv() -> void:
 	detail.load_slot(slots[focus_slot].get_slot())
 
 
+#TODO: add inv parameter for other invs !!!
 func update_slots()	 -> void:
 	var num_items: int = inv.inv_slots.size()
 	var i: int = 0
