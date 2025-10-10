@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://hoh6415bdbik"]
+[gd_scene load_steps=8 format=3 uid="uid://hoh6415bdbik"]
 
-[ext_resource type="Script" path="res://scenes/menus/potion/potion_craft_menu.gd" id="1_3ri03"]
+[ext_resource type="Script" uid="uid://detamcaly25j0" path="res://scenes/menus/potion/potion_craft_menu.gd" id="1_3ri03"]
 [ext_resource type="PackedScene" uid="uid://ci7tgjpkfvwpw" path="res://scenes/menus/potion/ingredients.tscn" id="1_55jro"]
 [ext_resource type="Texture2D" uid="uid://c68y3kmdv6gci" path="res://graphics/ui/sad_inv_bgd.png" id="1_uhppn"]
 [ext_resource type="PackedScene" uid="uid://itee0yhi1hk3" path="res://scenes/menus/potion/objective.tscn" id="2_qip6n"]
-[ext_resource type="Script" path="res://scenes/menus/potion/ingredients.gd" id="4_hheok"]
+[ext_resource type="Script" uid="uid://yqw4fu5e53yu" path="res://scenes/menus/potion/ingredients.gd" id="4_hheok"]
 [ext_resource type="PackedScene" uid="uid://dpovu7aydog44" path="res://scenes/menus/potion/bonnie.tscn" id="4_i0umm"]
+[ext_resource type="Script" uid="uid://cwnf2ilfij5kq" path="res://scenes/menus/potion/ingredient_detail.gd" id="5_jlqe0"]
 
 [node name="PotionCraftMenu" type="Control"]
 layout_mode = 3
@@ -79,6 +80,7 @@ size_flags_horizontal = 4
 custom_minimum_size = Vector2(120, 260)
 layout_mode = 2
 size_flags_vertical = 8
+script = ExtResource("5_jlqe0")
 
 [node name="Ingredients" parent="MarginContainer/VSplitContainer" instance=ExtResource("1_55jro")]
 layout_mode = 2

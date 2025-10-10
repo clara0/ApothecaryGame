@@ -1,11 +1,11 @@
 extends Control
 
-
 var is_open: bool = false
 var objective_exist: bool = false
+var curr_slot: Control
 
 @onready var ingredients: Control = $MarginContainer/VSplitContainer/Ingredients
-
+@onready var detail: Control = $MarginContainer/VSplitContainer/MarginContainer/HBoxContainer/Ingredient
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,9 +23,12 @@ func _process(_delta: float) -> void:
 	
 	if is_open:
 		if Input.is_action_just_pressed("right"):
-			ingredients.browse(ingredients.Action.RIGHT)
+			curr_slot = ingredients.browse(ingredients.Action.RIGHT)
 		if Input.is_action_just_pressed("left"):
-			ingredients.browse(ingredients.Action.LEFT)
+			curr_slot = ingredients.browse(ingredients.Action.LEFT)
+	
+	if curr_slot:
+		detail.load_slot(curr_slot.get_slot())
 
 
 func close() -> void:

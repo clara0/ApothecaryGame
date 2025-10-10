@@ -42,7 +42,7 @@ func update_slots()	 -> void:
 		i += 1
 
 
-func browse(action: Action) -> void:
+func browse(action: Action) -> Control:
 	var old_slot: int = focus_slot
 	match action:
 		Action.RIGHT:
@@ -65,3 +65,4 @@ func browse(action: Action) -> void:
 	
 	slots[old_slot].focus_off()
 	slots[focus_slot].focus_on()
+	return slots[focus_slot]

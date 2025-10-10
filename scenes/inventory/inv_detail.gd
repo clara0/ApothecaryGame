@@ -21,6 +21,7 @@ func format_list(data: Dictionary):
 			formatted += d + ": " + str(data[d]) + "\n"
 	return formatted.strip_edges(true, true)
 
+
 func load_slot(slot: InvSlot) -> void:
 	if slot == null:
 		clear()
