@@ -8,7 +8,18 @@ extends Control
 	$Detail/MarginContainer/VBoxContainer/FocusItem/VSplitContainer/Quantity
 @onready var desc: Label = \
 	$Detail/MarginContainer/VBoxContainer/ItemDesc/Desc
+@onready var effects: Label = \
+	$Detail/MarginContainer/VBoxContainer/Properties/HSplitContainer/Effects
+@onready var flavors: Label = \
+	$Detail/MarginContainer/VBoxContainer/Properties/HSplitContainer/Flavors
 
+
+func format_list(data: Dictionary):
+	var formatted: String = ""
+	for d in data:
+		if (data[d] != 0):
+			formatted += d + ": " + str(data[d]) + "\n"
+	return formatted.strip_edges(true, true)
 
 func load_slot(slot: InvSlot) -> void:
 	if slot == null:
@@ -18,10 +29,14 @@ func load_slot(slot: InvSlot) -> void:
 	name_label.text = slot.item.name
 	quantity.text = str(slot.quant)
 	desc.text = slot.item.desc
+	effects.text = format_list(slot.item.effects)
+	flavors.text = format_list(slot.item.flavors)
 
 
 func clear() -> void:
 	image.texture = null
-	name_label.text = "There is Nothing Here"
+	name_label.text = ""
 	quantity.text = "0"
-	desc.text = "filler text filler text this shouldn't show up"
+	desc.text = ""
+	effects.text = ""
+	flavors.text = ""

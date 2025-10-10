@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Inv" load_steps=9 format=3 uid="uid://ccnc7pxrcbm6c"]
 
-[ext_resource type="Script" path="res://inventory/inv_slot.gd" id="1_cx3ad"]
+[ext_resource type="Script" uid="uid://yhvx6iwm32pk" path="res://inventory/inv_slot.gd" id="1_cx3ad"]
 [ext_resource type="Resource" uid="uid://deywg2jc0fhke" path="res://inventory/items/chamomile.tres" id="2_r2dgo"]
-[ext_resource type="Script" path="res://inventory/inventory.gd" id="2_vtbwh"]
+[ext_resource type="Script" uid="uid://0y6niymjatqs" path="res://inventory/inventory.gd" id="2_vtbwh"]
 [ext_resource type="Resource" uid="uid://dddicmhcggj45" path="res://inventory/items/dandelion.tres" id="3_0obwj"]
 [ext_resource type="Resource" uid="uid://dua6onebj674r" path="res://inventory/items/poppy.tres" id="4_sallm"]
 
@@ -23,5 +23,4 @@ quant = 5
 
 [resource]
 script = ExtResource("2_vtbwh")
-name = ""
 inv_slots = Array[ExtResource("1_cx3ad")]([SubResource("Resource_vrrpd"), SubResource("Resource_k2exe"), SubResource("Resource_sp0gh")])

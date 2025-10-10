@@ -81,10 +81,33 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
 [node name="Desc" type="Label" parent="Detail/MarginContainer/VBoxContainer/ItemDesc"]
-custom_minimum_size = Vector2(100, 80)
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "some random placeholder text description hello blahblah blah blahv uh huh yeah"
+autowrap_mode = 2
+
+[node name="Properties" type="MarginContainer" parent="Detail/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Detail/MarginContainer/VBoxContainer/Properties"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Effects" type="Label" parent="Detail/MarginContainer/VBoxContainer/Properties/HSplitContainer"]
+custom_minimum_size = Vector2(92, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "placeholder text
+more placeholder"
+
+[node name="Flavors" type="Label" parent="Detail/MarginContainer/VBoxContainer/Properties/HSplitContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "placeholder flavor text"
 autowrap_mode = 2
 
 [node name="BonnieStats" type="HSplitContainer" parent="Detail/MarginContainer/VBoxContainer"]
@@ -125,12 +148,10 @@ autowrap_mode = 2
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 8
-text = "Happiness:
-"
+text = "Happiness:"
 
 [node name="Money" type="Label" parent="Detail/MarginContainer/VBoxContainer/BonnieStats/MarginContainer/Stats"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 8
-text = "$$$:
-"
+text = "$$$:"
