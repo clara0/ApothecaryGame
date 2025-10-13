@@ -1,5 +1,12 @@
 extends CharacterBody2D
 
+enum Inventory {
+	EQUIP,
+	ITEM,
+	MAT,
+	POT,
+}
+
 enum Anim {
 	IDLE, 
 	UP, 
@@ -20,7 +27,10 @@ var _anim_states = {
 var _curr_anim: Anim = Anim.IDLE
 var direction: Vector2 = Vector2.ZERO
 @onready var _animation_player = $AnimationPlayer
+@export var equipment_inv: Inv
+@export var item_inv: Inv
 @export var material_inv: Inv
+@export var potion_inv: Inv
 @export var stats: Stats
 
 
@@ -28,8 +38,23 @@ func pause() -> void:
 	_animation_player.stop()
 
 
-func collect(item: InvItem) -> void:
-	material_inv.add(item)
+func _get_inv(inv: Inventory) -> Inv:
+	match inv:
+		Inventory.EQUIP:
+			return equipment_inv
+		Inventory.ITEM:
+			return item_inv
+		Inventory.MAT:
+			return material_inv
+		Inventory.POT:
+			return potion_inv
+		_:
+			return null
+
+
+func collect(item: InvItem, inv: Inventory) -> void:
+	var target = _get_inv(inv)
+	target.add(item)
 
 
 func give(item: InvItem) -> InvItem:

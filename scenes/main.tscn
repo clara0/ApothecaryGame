@@ -1,15 +1,18 @@
-[gd_scene load_steps=17 format=4 uid="uid://ysuhy6cl4fqh"]
+[gd_scene load_steps=20 format=4 uid="uid://ysuhy6cl4fqh"]
 
 [ext_resource type="PackedScene" uid="uid://f8sn0a0pa6k7" path="res://scenes/player/player.tscn" id="1_404mn"]
 [ext_resource type="Script" uid="uid://bgl7tbyv2p2ux" path="res://scenes/player/player.gd" id="2_2fvrx"]
 [ext_resource type="Resource" uid="uid://ccnc7pxrcbm6c" path="res://inventory/invs/mat_inv_player.tres" id="5_bekfm"]
 [ext_resource type="PackedScene" uid="uid://co1hr67rpogvn" path="res://scenes/menus/game_menu.tscn" id="5_swrxa"]
 [ext_resource type="PackedScene" uid="uid://hoh6415bdbik" path="res://scenes/menus/potion/potion_craft_menu.tscn" id="6_lvwsc"]
+[ext_resource type="Resource" uid="uid://cdvi6ta8jtdw0" path="res://inventory/invs/equip_inv_player.tres" id="7_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://dxwe7wll6ichw" path="res://graphics/background/bonnie_house.png" id="7_sr5wo"]
 [ext_resource type="PackedScene" uid="uid://w1u8cbkwbqho" path="res://scenes/inventory/player_inv.tscn" id="8_grqsx"]
+[ext_resource type="Resource" uid="uid://crbjmo3um6ppd" path="res://inventory/invs/item_inv_player.tres" id="8_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://dqalsv0dgy6xy" path="res://graphics/background/nancy_house.png" id="8_r4heb"]
 [ext_resource type="Resource" uid="uid://dpoma8v12qm27" path="res://stats/player_stats.tres" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://pbc5rnthj20g" path="res://graphics/background/npc_house.png" id="9_tqnn2"]
+[ext_resource type="Resource" uid="uid://b4txf742ux0yf" path="res://inventory/invs/pot_inv_player.tres" id="10_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://dvcbb15llnjit" path="res://graphics/background/npc_house2.png" id="10_pul54"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3r542"]
@@ -402,7 +405,10 @@ tile_set = SubResource("TileSet_xs88o")
 
 [node name="Player" parent="." instance=ExtResource("1_404mn")]
 script = ExtResource("2_2fvrx")
+equipment_inv = ExtResource("7_a8y0u")
+item_inv = ExtResource("8_jkv2x")
 material_inv = ExtResource("5_bekfm")
+potion_inv = ExtResource("10_jbj1t")
 stats = ExtResource("8_ya4ey")
 
 [node name="PotionCraftMenu" parent="." instance=ExtResource("6_lvwsc")]
