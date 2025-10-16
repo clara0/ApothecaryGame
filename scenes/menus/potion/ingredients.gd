@@ -31,7 +31,7 @@ func reset() -> void:
 	update_slots()
 
 
-func update_slots()	 -> void:
+func update_slots() -> void:
 	var num_items: int = inv.inv_slots.size()
 	var i: int = first_inv_item
 	for s in slots:

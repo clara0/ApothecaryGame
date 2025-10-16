@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://f1rb5s4x4ayd"]
+[gd_resource type="Resource" script_class="InvItemMat" load_steps=3 format=3 uid="uid://c547ign6j8xui"]
 
-[ext_resource type="Script" uid="uid://cdws0m8pl6qxh" path="res://inventory/inv_item.gd" id="1_sle3a"]
-[ext_resource type="Texture2D" uid="uid://blxlhe4srfthp" path="res://graphics/items/mugwort.png" id="2_ggll8"]
+[ext_resource type="Script" uid="uid://dihki8ord8ehi" path="res://inventory/inv_item_mat.gd" id="1_ahk0b"]
+[ext_resource type="Texture2D" uid="uid://blxlhe4srfthp" path="res://graphics/items/mugwort.png" id="2_cyu1g"]
 
 [resource]
-script = ExtResource("1_sle3a")
+script = ExtResource("1_ahk0b")
 name = "Mugwort"
-texture = ExtResource("2_ggll8")
-desc = "very green"
+texture = ExtResource("2_cyu1g")
+desc = "..."
+metadata/_custom_type_script = "uid://dihki8ord8ehi"

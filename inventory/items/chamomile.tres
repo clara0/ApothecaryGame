@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://deywg2jc0fhke"]
+[gd_resource type="Resource" script_class="InvItemMat" load_steps=3 format=3 uid="uid://bymq70vr724cy"]
 
-[ext_resource type="Script" uid="uid://cdws0m8pl6qxh" path="res://inventory/inv_item.gd" id="1_a18yr"]
+[ext_resource type="Script" uid="uid://dihki8ord8ehi" path="res://inventory/inv_item_mat.gd" id="1_46xvt"]
 [ext_resource type="Texture2D" uid="uid://jyq71bace210" path="res://graphics/items/chamomile.png" id="2_vip1j"]
 
 [resource]
-script = ExtResource("1_a18yr")
+script = ExtResource("1_46xvt")
 name = "Chamomile"
 texture = ExtResource("2_vip1j")
-desc = "nice for tea"
+desc = "..."
+metadata/_custom_type_script = "uid://dihki8ord8ehi"

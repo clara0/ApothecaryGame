@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dddicmhcggj45"]
+[gd_resource type="Resource" script_class="InvItemMat" load_steps=3 format=3 uid="uid://oovgk3lu5svv"]
 
-[ext_resource type="Script" uid="uid://cdws0m8pl6qxh" path="res://inventory/inv_item.gd" id="1_fdab8"]
+[ext_resource type="Script" uid="uid://dihki8ord8ehi" path="res://inventory/inv_item_mat.gd" id="1_6dig3"]
 [ext_resource type="Texture2D" uid="uid://b5e5f3jxb137o" path="res://graphics/items/dandelion.png" id="2_kxdhu"]
 
 [resource]
-script = ExtResource("1_fdab8")
+script = ExtResource("1_6dig3")
 name = "Dandelion"
 texture = ExtResource("2_kxdhu")
-desc = "tanpopo"
+desc = "Dandy Lion"
+metadata/_custom_type_script = "uid://dihki8ord8ehi"

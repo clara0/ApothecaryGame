@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dua6onebj674r"]
+[gd_resource type="Resource" script_class="InvItemMat" load_steps=3 format=3 uid="uid://bkrqfdm13jkjp"]
 
-[ext_resource type="Script" uid="uid://cdws0m8pl6qxh" path="res://inventory/inv_item.gd" id="1_uwd1t"]
+[ext_resource type="Script" uid="uid://dihki8ord8ehi" path="res://inventory/inv_item_mat.gd" id="1_8idrb"]
 [ext_resource type="Texture2D" uid="uid://svxjyvr5k1df" path="res://graphics/items/poppy.png" id="2_k3kuq"]
 
 [resource]
-script = ExtResource("1_uwd1t")
+script = ExtResource("1_8idrb")
 name = "Poppy"
 texture = ExtResource("2_k3kuq")
-desc = "poppy plant :) nothing nefarious"
+desc = ":0"
+metadata/_custom_type_script = "uid://dihki8ord8ehi"

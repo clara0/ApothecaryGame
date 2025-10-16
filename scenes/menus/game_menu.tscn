@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://co1hr67rpogvn"]
+[gd_scene load_steps=2 format=3 uid="uid://co1hr67rpogvn"]
 
 [ext_resource type="Script" uid="uid://5iqkf6hvoop4" path="res://scenes/menus/game_menu.gd" id="1_voayh"]
-[ext_resource type="Texture2D" uid="uid://srs5iam0fysa" path="res://graphics/ui/menu/header_button.png" id="2_q0jvu"]
 
 [node name="GameMenu" type="Control"]
 layout_mode = 3
@@ -40,7 +39,6 @@ theme_override_constants/separation = 16
 
 [node name="Header" type="NinePatchRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_q0jvu")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
