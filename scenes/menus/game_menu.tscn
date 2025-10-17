@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://co1hr67rpogvn"]
+[gd_scene load_steps=6 format=3 uid="uid://co1hr67rpogvn"]
 
 [ext_resource type="Script" uid="uid://5iqkf6hvoop4" path="res://scenes/menus/game_menu.gd" id="1_voayh"]
+[ext_resource type="Texture2D" uid="uid://ck6ddtnbhigby" path="res://graphics/ui/buttons/header_button.png" id="2_2jlx6"]
+[ext_resource type="Texture2D" uid="uid://vix2n5ys1kik" path="res://graphics/ui/buttons/header_shaded.png" id="3_7uatn"]
+[ext_resource type="Texture2D" uid="uid://b4svqabjrxnhu" path="res://graphics/ui/buttons/button_wooden.png" id="4_f4px7"]
+[ext_resource type="Texture2D" uid="uid://c67n2k8wqfvha" path="res://graphics/ui/buttons/button_shaded.png" id="5_32ibp"]
 
 [node name="GameMenu" type="Control"]
 layout_mode = 3
@@ -19,7 +23,32 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_voayh")
 
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -56.000004
+offset_right = 46.0
+offset_bottom = 42.999996
+scale = Vector2(1.6399951, 1.6399951)
+theme_override_constants/separation = 0
+
+[node name="save" type="TextureButton" parent="Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_2jlx6")
+texture_pressed = ExtResource("3_7uatn")
+
+[node name="load" type="TextureButton" parent="Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("4_f4px7")
+texture_pressed = ExtResource("5_32ibp")
+
+[node name="exit" type="TextureButton" parent="Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("4_f4px7")
+texture_pressed = ExtResource("5_32ibp")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jyq71bace210"
-path="res://.godot/imported/chamomile.png-c568d706f94f5b8c967dc79fd5c8950b.ctex"
+uid="uid://vix2n5ys1kik"
+path="res://.godot/imported/header_shaded.png-8a2a8629ce2f1820c67e3ae3cfecece7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/items/chamomile.png"
-dest_files=["res://.godot/imported/chamomile.png-c568d706f94f5b8c967dc79fd5c8950b.ctex"]
+source_file="res://graphics/ui/buttons/header_shaded.png"
+dest_files=["res://.godot/imported/header_shaded.png-8a2a8629ce2f1820c67e3ae3cfecece7.ctex"]
 
 [params]
 

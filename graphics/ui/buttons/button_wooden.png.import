@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jyq71bace210"
-path="res://.godot/imported/chamomile.png-c568d706f94f5b8c967dc79fd5c8950b.ctex"
+uid="uid://b4svqabjrxnhu"
+path="res://.godot/imported/button_wooden.png-8e394b9b684e406588c8155e3735590f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/items/chamomile.png"
-dest_files=["res://.godot/imported/chamomile.png-c568d706f94f5b8c967dc79fd5c8950b.ctex"]
+source_file="res://graphics/ui/buttons/button_wooden.png"
+dest_files=["res://.godot/imported/button_wooden.png-8e394b9b684e406588c8155e3735590f.ctex"]
 
 [params]
 
