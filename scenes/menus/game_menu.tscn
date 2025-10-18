@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://co1hr67rpogvn"]
+[gd_scene load_steps=6 format=3 uid="uid://co1hr67rpogvn"]
 
 [ext_resource type="Script" uid="uid://5iqkf6hvoop4" path="res://scenes/menus/game_menu.gd" id="1_voayh"]
+[ext_resource type="Texture2D" uid="uid://ck6ddtnbhigby" path="res://graphics/ui/menu/header_button.png" id="2_2jlx6"]
+[ext_resource type="Texture2D" uid="uid://vix2n5ys1kik" path="res://graphics/ui/menu/header_shaded.png" id="3_7uatn"]
+[ext_resource type="Texture2D" uid="uid://b4svqabjrxnhu" path="res://graphics/ui/menu/button_wooden.png" id="4_f4px7"]
+[ext_resource type="Texture2D" uid="uid://c67n2k8wqfvha" path="res://graphics/ui/menu/button_shaded.png" id="5_32ibp"]
 
 [node name="GameMenu" type="Control"]
 layout_mode = 3
@@ -19,7 +23,74 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_voayh")
 
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -48.0
+offset_top = -89.0
+offset_right = 42.0
+offset_bottom = 10.0
+scale = Vector2(1.9199945, 1.9199945)
+theme_override_constants/separation = 0
+
+[node name="Header" type="NinePatchRect" parent="Buttons"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Buttons/Header"]
+layout_mode = 0
+offset_left = 12.500036
+offset_top = -20.833393
+offset_right = 61.50004
+offset_bottom = 2.166607
+text = "MENU"
+horizontal_alignment = 1
+
+[node name="save" type="TextureButton" parent="Buttons"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("2_2jlx6")
+texture_pressed = ExtResource("3_7uatn")
+
+[node name="Label" type="Label" parent="Buttons/save"]
+layout_mode = 0
+offset_left = 26.041742
+offset_top = 10.937532
+offset_right = 66.04174
+offset_bottom = 33.93753
+scale = Vector2(0.68750006, 0.68750006)
+text = "Save"
+
+[node name="load" type="TextureButton" parent="Buttons"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("4_f4px7")
+texture_pressed = ExtResource("5_32ibp")
+
+[node name="Label" type="Label" parent="Buttons/load"]
+layout_mode = 0
+offset_left = 26.041742
+offset_top = 10.916806
+offset_right = 66.04174
+offset_bottom = 33.91681
+scale = Vector2(0.6249993, 0.6249993)
+text = "Load"
+
+[node name="exit" type="TextureButton" parent="Buttons"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("4_f4px7")
+texture_pressed = ExtResource("5_32ibp")
+
+[node name="Label" type="Label" parent="Buttons/exit"]
+layout_mode = 0
+offset_left = 28.645916
+offset_top = 9.604387
+offset_right = 68.64592
+offset_bottom = 32.604385
+scale = Vector2(0.66666603, 0.66666603)
+text = "Exit"
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -62,6 +133,9 @@ text = "Load"
 layout_mode = 2
 text = "Exit"
 
+[connection signal="pressed" from="Buttons/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Buttons/load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Buttons/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
