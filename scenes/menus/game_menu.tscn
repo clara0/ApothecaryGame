@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://co1hr67rpogvn"]
+[gd_scene load_steps=9 format=3 uid="uid://co1hr67rpogvn"]
 
+[ext_resource type="Theme" uid="uid://wrqvmxitgnsb" path="res://scenes/menus/base_theme.tres" id="1_f4px7"]
 [ext_resource type="Script" uid="uid://5iqkf6hvoop4" path="res://scenes/menus/game_menu.gd" id="1_voayh"]
 [ext_resource type="Texture2D" uid="uid://ck6ddtnbhigby" path="res://graphics/ui/menu/header_button.png" id="2_2jlx6"]
 [ext_resource type="Texture2D" uid="uid://vix2n5ys1kik" path="res://graphics/ui/menu/header_shaded.png" id="3_7uatn"]
 [ext_resource type="Texture2D" uid="uid://b4svqabjrxnhu" path="res://graphics/ui/menu/button_wooden.png" id="4_f4px7"]
 [ext_resource type="Texture2D" uid="uid://c67n2k8wqfvha" path="res://graphics/ui/menu/button_shaded.png" id="5_32ibp"]
+[ext_resource type="FontFile" uid="uid://dv14fe61ae42s" path="res://graphics/ui/font/ArchitectsDaughter-Regular.ttf" id="6_7uatn"]
+
+[sub_resource type="FontVariation" id="FontVariation_7uatn"]
+base_font = ExtResource("6_7uatn")
 
 [node name="GameMenu" type="Control"]
 layout_mode = 3
@@ -13,14 +18,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -26.0
+offset_top = -95.0
+offset_right = 14.0
+offset_bottom = -55.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_f4px7")
 script = ExtResource("1_voayh")
 
 [node name="Buttons" type="VBoxContainer" parent="."]
@@ -41,6 +47,7 @@ offset_left = 12.500036
 offset_top = -20.833393
 offset_right = 61.50004
 offset_bottom = 2.166607
+theme_override_fonts/font = ExtResource("6_7uatn")
 text = "MENU"
 horizontal_alignment = 1
 
@@ -52,11 +59,13 @@ texture_pressed = ExtResource("3_7uatn")
 
 [node name="Label" type="Label" parent="Buttons/save"]
 layout_mode = 0
-offset_left = 26.041742
-offset_top = 10.937532
-offset_right = 66.04174
-offset_bottom = 33.93753
+offset_left = 24.479239
+offset_top = 10.9375305
+offset_right = 64.47924
+offset_bottom = 36.93753
 scale = Vector2(0.68750006, 0.68750006)
+theme_override_fonts/font = ExtResource("6_7uatn")
+theme_override_font_sizes/font_size = 18
 text = "Save"
 
 [node name="load" type="TextureButton" parent="Buttons"]
@@ -67,11 +76,12 @@ texture_pressed = ExtResource("5_32ibp")
 
 [node name="Label" type="Label" parent="Buttons/load"]
 layout_mode = 0
-offset_left = 26.041742
+offset_left = 25.000072
 offset_top = 10.916806
-offset_right = 66.04174
-offset_bottom = 33.91681
+offset_right = 66.00008
+offset_bottom = 36.916805
 scale = Vector2(0.6249993, 0.6249993)
+theme_override_font_sizes/font_size = 18
 text = "Load"
 
 [node name="exit" type="TextureButton" parent="Buttons"]
@@ -82,11 +92,12 @@ texture_pressed = ExtResource("5_32ibp")
 
 [node name="Label" type="Label" parent="Buttons/exit"]
 layout_mode = 0
-offset_left = 28.645916
+offset_left = 27.604246
 offset_top = 9.604387
-offset_right = 68.64592
-offset_bottom = 32.604385
+offset_right = 67.60425
+offset_bottom = 35.604385
 scale = Vector2(0.66666603, 0.66666603)
+theme_override_font_sizes/font_size = 18
 text = "Exit"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -111,26 +122,23 @@ theme_override_constants/separation = 16
 [node name="Header" type="NinePatchRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 30
-text = "MENU"
-
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="Save" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_7uatn")
 text = "Save"
 
 [node name="Load" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_7uatn")
 text = "Load"
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_7uatn")
 text = "Exit"
 
 [connection signal="pressed" from="Buttons/save" to="." method="_on_save_pressed"]
