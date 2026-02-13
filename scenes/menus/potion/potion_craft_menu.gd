@@ -4,8 +4,7 @@ var is_open: bool = false
 var objective_exist: bool = false
 var curr_slot: Control
 
-@onready var ingredients: Control = $MarginContainer/VSplitContainer/Ingredients
-@onready var detail: Control = $MarginContainer/VSplitContainer/MarginContainer/HBoxContainer/Ingredient
+# @onready var detail: Control = $MarginContainer/VSplitContainer/MarginContainer/HBoxContainer/Ingredient
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,13 +21,10 @@ func _process(_delta: float) -> void:
 			open()
 	
 	if is_open:
-		if Input.is_action_just_pressed("right"):
-			curr_slot = ingredients.browse(ingredients.Action.RIGHT)
-		if Input.is_action_just_pressed("left"):
-			curr_slot = ingredients.browse(ingredients.Action.LEFT)
+		pass
 	
-	if curr_slot:
-		detail.load_slot(curr_slot.get_slot())
+	# if curr_slot:
+	# 	detail.load_slot(curr_slot.get_slot())
 
 
 func close() -> void:
@@ -41,8 +37,6 @@ func close() -> void:
 func open() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = true
-	
-	ingredients.reset()
-	
+		
 	visible = true
 	is_open = true
