@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://hoh6415bdbik"]
+[gd_scene load_steps=5 format=3 uid="uid://hoh6415bdbik"]
 
 [ext_resource type="Script" uid="uid://detamcaly25j0" path="res://scenes/menus/potion/potion_craft_menu.gd" id="1_3ri03"]
-[ext_resource type="PackedScene" uid="uid://ci7tgjpkfvwpw" path="res://scenes/menus/potion/ingredients.tscn" id="1_55jro"]
 [ext_resource type="Texture2D" uid="uid://c68y3kmdv6gci" path="res://graphics/ui/sad_inv_bgd.png" id="1_uhppn"]
-[ext_resource type="PackedScene" uid="uid://itee0yhi1hk3" path="res://scenes/menus/potion/objective.tscn" id="2_qip6n"]
-[ext_resource type="Script" uid="uid://yqw4fu5e53yu" path="res://scenes/menus/potion/ingredients.gd" id="4_hheok"]
-[ext_resource type="PackedScene" uid="uid://dpovu7aydog44" path="res://scenes/menus/potion/bonnie.tscn" id="4_i0umm"]
-[ext_resource type="Script" uid="uid://cwnf2ilfij5kq" path="res://scenes/menus/potion/ingredient_detail.gd" id="5_jlqe0"]
+[ext_resource type="PackedScene" uid="uid://ci45byn7gpeqr" path="res://scenes/inventory/slot.tscn" id="3_mjnq1"]
+[ext_resource type="Texture2D" uid="uid://c76nm4x856xki" path="res://graphics/ui/slot/inv_slot_trans.png" id="4_pyhmu"]
 
 [node name="PotionCraftMenu" type="Control"]
 layout_mode = 3
@@ -20,70 +17,222 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_3ri03")
 
-[node name="Background" type="NinePatchRect" parent="."]
-custom_minimum_size = Vector2(640, 360)
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -255.0
+offset_top = -140.0
+offset_right = 235.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_uhppn")
+theme_override_constants/separation = 10
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
+[node name="Inventory" type="NinePatchRect" parent="HSplitContainer"]
+custom_minimum_size = Vector2(285, 240)
+layout_mode = 2
+texture = ExtResource("1_uhppn")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/Inventory"]
+layout_mode = 0
+offset_right = 285.0
+offset_bottom = 240.0
+theme_override_constants/margin_top = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Inventory/MarginContainer"]
+custom_minimum_size = Vector2(285, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="SpacingPurposes" type="Control" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot2" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot3" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot4" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot5" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot6" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot7" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot8" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot9" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot10" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot11" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot12" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot13" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot14" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot15" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot16" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot17" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot18" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot19" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot20" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot21" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot22" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot23" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot24" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot25" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot26" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot27" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot28" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot29" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="Slot30" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("3_mjnq1")]
+layout_mode = 2
+
+[node name="SpacingPurposes2" type="Control" parent="HSplitContainer/Inventory/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Detail" type="Control" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="Detail" type="NinePatchRect" parent="HSplitContainer/Detail"]
+custom_minimum_size = Vector2(195, 240)
+layout_mode = 0
+texture = ExtResource("1_uhppn")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/Detail/Detail"]
+layout_mode = 0
+offset_right = 195.0
+offset_bottom = 240.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Detail/Detail/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="FocusItem" type="HSplitContainer" parent="HSplitContainer/Detail/Detail/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Icon" type="Control" parent="HSplitContainer/Detail/Detail/MarginContainer/VBoxContainer/FocusItem"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HSplitContainer/Detail/Detail/MarginContainer/VBoxContainer/FocusItem/Icon"]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_pyhmu")
+
+[node name="Control" type="Control" parent="HSplitContainer/Detail/Detail/MarginContainer/VBoxContainer/FocusItem/Icon"]
+anchors_preset = 0
+offset_right = 60.0
+offset_bottom = 60.0
+
+[node name="Item" type="Sprite2D" parent="HSplitContainer/Detail/Detail/MarginContainer/VBoxContainer/FocusItem/Icon/Control"]
+scale = Vector2(0.75, 0.75)
+centered = false
+
+[node name="VSplitContainer" type="VSplitContainer" parent="HSplitContainer/Detail/Detail/MarginContainer/VBoxContainer/FocusItem"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="HSplitContainer/Detail/Detail/MarginContainer/VBoxContainer/FocusItem/VSplitContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Placeholder Name"
+autowrap_mode = 2
+
+[node name="Owned" type="Label" parent="HSplitContainer/Detail/Detail/MarginContainer/VBoxContainer/FocusItem/VSplitContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "1234"
+
+[node name="ItemDesc" type="MarginContainer" parent="HSplitContainer/Detail/Detail/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
-[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer"]
-custom_minimum_size = Vector2(540, 340)
+[node name="Desc" type="Label" parent="HSplitContainer/Detail/Detail/MarginContainer/VBoxContainer/ItemDesc"]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VSplitContainer"]
-layout_mode = 2
-theme_override_constants/margin_top = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VSplitContainer/MarginContainer"]
-custom_minimum_size = Vector2(330, 260)
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Objective" parent="MarginContainer/VSplitContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_qip6n")]
-custom_minimum_size = Vector2(120, 100)
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="Base" type="Control" parent="MarginContainer/VSplitContainer/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Ingredient" parent="MarginContainer/VSplitContainer/MarginContainer/HBoxContainer" instance=ExtResource("4_i0umm")]
-custom_minimum_size = Vector2(120, 260)
-layout_mode = 2
-size_flags_vertical = 8
-script = ExtResource("5_jlqe0")
-
-[node name="Ingredients" parent="MarginContainer/VSplitContainer" instance=ExtResource("1_55jro")]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("4_hheok")
+theme_override_font_sizes/font_size = 8
+text = "some random placeholder text description hello blahblah blah blahv uh huh yeah"
+autowrap_mode = 2
