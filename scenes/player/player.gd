@@ -52,12 +52,12 @@ func _get_inv(inv: Inventory) -> Inv:
 			return null
 
 
-func collect(item: InvItem, inv: Inventory) -> void:
+func collect(item: Item, inv: Inventory) -> void:
 	var target = _get_inv(inv)
 	target.add(item)
 
 
-func give(item: InvItem) -> InvItem:
+func give(item: Item) -> Item:
 	return material_inv.sub(item)
 	
 

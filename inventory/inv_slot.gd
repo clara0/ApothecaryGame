@@ -2,19 +2,19 @@ extends Resource
 
 class_name InvSlot
 
-@export var item: InvItem
-@export var quant: int
+@export var item: Item
+@export var count: int
 
 
 func to_json() -> Dictionary:
 	var data : Dictionary = {
-		"invItem": item.resource_path,
+		"item": item.resource_path,
 		"path": resource_path,
-		"quant": quant,
+		"count": count,
 	}
 	return data
 
 
 func from_json(data: Dictionary) -> void:
-	item = load(data["invItem"])
-	quant = data["quant"]
+	item = load(data["item"])
+	count = data["count"]

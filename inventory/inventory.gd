@@ -15,7 +15,7 @@ var curr: int = 0
 
 ## Returns the slot containing a specified item.
 ## Returns null if item does not exist in inventory or is null.
-func get_item(item: InvItem) -> InvSlot:
+func get_item(item: Item) -> InvSlot:
 	for s in inv_slots:
 		if s == item:
 			return s
@@ -23,7 +23,7 @@ func get_item(item: InvItem) -> InvSlot:
 
 
 ## Adds an item to the inventory.
-func add(item: InvItem) -> void:
+func add(item: Item) -> void:
 	for s in inv_slots:
 		if s == item:
 			s.quant += 1
@@ -37,7 +37,7 @@ func add(item: InvItem) -> void:
 ## Removes a given amount of an item from the inventory. 
 ## Returns the item removed on success. Removal is not performed if amount of
 ## item to be removed exceeds amount in inventory.
-func sub(item: InvItem, amt: int = 1) -> InvItem:
+func sub(item: Item, amt: int = 1) -> Item:
 	var target: InvSlot = get_item(item)
 	if target != null:
 		if target.quant < amt:
