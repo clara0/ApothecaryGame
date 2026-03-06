@@ -37,9 +37,3 @@ func removeIngredient(ing: Ingredient) -> void:
         effects[e] -= ing.effects[e]
     for f in ing.flavors:
         effects[f] -= ing.flavors[f]
-
-
-func getDescription() -> String:
-    # TODO: Return actual description of stats
-    return "too lazy to format rn"
-
