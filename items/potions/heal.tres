@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=3 format=3 uid="uid://cvd3m271fpyre"]
+
+[ext_resource type="Script" uid="uid://b8brlgnjb1woa" path="res://items/potion.gd" id="1_3hfxa"]
+[ext_resource type="Texture2D" uid="uid://bxu64eg30p5p4" path="res://graphics/potions/heal.png" id="2_mem11"]
+
+[resource]
+script = ExtResource("1_3hfxa")
+cost = 12
+name = "Healling Potion"
+texture = ExtResource("2_mem11")
+desc = "Make u feel better"
+metadata/_custom_type_script = "uid://b8brlgnjb1woa"

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://dh5x7127p21ww"]
+
+[ext_resource type="Script" uid="uid://cuwwv52hvefqk" path="res://items/ingredient.gd" id="1_nky8v"]
+[ext_resource type="Texture2D" uid="uid://svxjyvr5k1df" path="res://graphics/items/poppy.png" id="2_6dem0"]
+
+[resource]
+script = ExtResource("1_nky8v")
+effects = {
+"calm": 5,
+"cool": 0,
+"digestion": 0,
+"heat": 0,
+"pain relief": 5
+}
+flavors = {
+"bitter": 0,
+"salty": 1,
+"sour": 0,
+"spicy": 0,
+"sweet": 0
+}
+name = "Poppy"
+texture = ExtResource("2_6dem0")
+desc = "Very sleepy"
+metadata/_custom_type_script = "uid://cuwwv52hvefqk"

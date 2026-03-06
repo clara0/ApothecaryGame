@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItemPot" load_steps=3 format=3 uid="uid://c410k60sn4pbj"]
+
+[ext_resource type="Script" uid="uid://eofi7jq3ogmh" path="res://inventory/inv_item_pot.gd" id="1_l45b2"]
+[ext_resource type="Texture2D" uid="uid://bxu64eg30p5p4" path="res://graphics/potions/heal.png" id="2_nv2gt"]
+
+[resource]
+script = ExtResource("1_l45b2")
+texture = ExtResource("2_nv2gt")
+metadata/_custom_type_script = "uid://eofi7jq3ogmh"

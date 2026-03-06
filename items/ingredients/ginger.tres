@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://ch7glkgrg2cen"]
+
+[ext_resource type="Script" uid="uid://cuwwv52hvefqk" path="res://items/ingredient.gd" id="1_jd7e4"]
+[ext_resource type="Texture2D" uid="uid://dxjvauxb7mysx" path="res://graphics/items/ginger.png" id="2_3e48a"]
+
+[resource]
+script = ExtResource("1_jd7e4")
+effects = {
+"calm": 0,
+"cool": 0,
+"digestion": 3,
+"heat": 5,
+"pain relief": 0
+}
+flavors = {
+"bitter": 1,
+"salty": 0,
+"sour": 0,
+"spicy": 6,
+"sweet": 1
+}
+name = "Ginger"
+texture = ExtResource("2_3e48a")
+desc = "Spicy spicy"
+metadata/_custom_type_script = "uid://cuwwv52hvefqk"

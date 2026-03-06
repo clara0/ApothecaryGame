@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://ceindn6k7sird"]
+
+[ext_resource type="Script" uid="uid://cuwwv52hvefqk" path="res://items/ingredient.gd" id="1_5gea8"]
+[ext_resource type="Texture2D" uid="uid://b5e5f3jxb137o" path="res://graphics/items/dandelion.png" id="2_sdf87"]
+
+[resource]
+script = ExtResource("1_5gea8")
+effects = {
+"calm": 5,
+"cool": 0,
+"digestion": 3,
+"heat": 0,
+"pain relief": 0
+}
+flavors = {
+"bitter": 1,
+"salty": 0,
+"sour": 3,
+"spicy": 0,
+"sweet": 2
+}
+name = "Dandelion"
+texture = ExtResource("2_sdf87")
+desc = "Very cute"
+metadata/_custom_type_script = "uid://cuwwv52hvefqk"

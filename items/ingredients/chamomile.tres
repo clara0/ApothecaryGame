@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://cshy5dy0a6cx7"]
+
+[ext_resource type="Script" uid="uid://cuwwv52hvefqk" path="res://items/ingredient.gd" id="1_1thya"]
+[ext_resource type="Texture2D" uid="uid://jyq71bace210" path="res://graphics/items/chamomile.png" id="2_ulfai"]
+
+[resource]
+script = ExtResource("1_1thya")
+effects = {
+"calm": 5,
+"cool": 0,
+"digestion": 0,
+"heat": 0,
+"pain relief": 1
+}
+flavors = {
+"bitter": 3,
+"salty": 0,
+"sour": 0,
+"spicy": 0,
+"sweet": 1
+}
+name = "Chamomile"
+texture = ExtResource("2_ulfai")
+desc = "Sleepy sleepy"
+metadata/_custom_type_script = "uid://cuwwv52hvefqk"

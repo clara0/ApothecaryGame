@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://c7pi3l3yyllxm"]
+
+[ext_resource type="Script" uid="uid://cuwwv52hvefqk" path="res://items/ingredient.gd" id="1_q1kyk"]
+[ext_resource type="Texture2D" uid="uid://blxlhe4srfthp" path="res://graphics/items/mugwort.png" id="2_vv8le"]
+
+[resource]
+script = ExtResource("1_q1kyk")
+effects = {
+"calm": 0,
+"cool": 0,
+"digestion": 5,
+"heat": 0,
+"pain relief": 0
+}
+flavors = {
+"bitter": 3,
+"salty": 0,
+"sour": 0,
+"spicy": 0,
+"sweet": 0
+}
+name = "Mugwort"
+texture = ExtResource("2_vv8le")
+desc = "Uh idk"
+metadata/_custom_type_script = "uid://cuwwv52hvefqk"
