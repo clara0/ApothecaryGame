@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Persist="*res://singletons/persist.gd"
+GameState="*res://singletons/game_state.gd"
+MenuManager="*res://singletons/menu_manager.gd"
 
 [display]
 

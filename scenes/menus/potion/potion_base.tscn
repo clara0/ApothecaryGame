@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://boq3pkfxrti0q"]
+[gd_scene load_steps=5 format=3 uid="uid://boq3pkfxrti0q"]
 
+[ext_resource type="Script" uid="uid://cka1gylh54t5l" path="res://scenes/menus/potion/potion_base.gd" id="1_cj5dh"]
 [ext_resource type="Texture2D" uid="uid://c68y3kmdv6gci" path="res://graphics/ui/sad_inv_bgd.png" id="1_j6lsu"]
 [ext_resource type="PackedScene" uid="uid://ci45byn7gpeqr" path="res://scenes/inventory/slot.tscn" id="2_cj5dh"]
 [ext_resource type="Texture2D" uid="uid://c76nm4x856xki" path="res://graphics/ui/slot/inv_slot_trans.png" id="3_q7g8x"]
@@ -9,6 +10,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_cj5dh")
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 1
