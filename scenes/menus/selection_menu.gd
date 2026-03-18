@@ -1,6 +1,6 @@
 
 @abstract
-class_name SelectionMenu
+class_name GridMenu
 extends Control
 
 enum Action {
@@ -12,7 +12,6 @@ enum Action {
 
 const row_len: int = 6
 const num_rows: int = 5
-var invs: Array[Inv]
 var slots: Array
 var detail: Control
 var focused_inv: Inv
@@ -22,12 +21,6 @@ var focus_slot: int = 0
 
 @abstract func open()
 @abstract func close()
-
-
-func enter_inv() -> void:
-	slots[focus_slot].focus_on()
-	if detail:
-		detail.load_slot(slots[focus_slot].get_slot())
 
 
 func update_slots()	 -> void:
@@ -76,5 +69,5 @@ func browse(action: Action) -> void:
 	
 	slots[old_slot].focus_off()
 	slots[focus_slot].focus_on()
-	if detail:
+	if detail != null:
 		detail.load_slot(slots[focus_slot].get_slot())

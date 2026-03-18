@@ -1,4 +1,4 @@
-extends SelectionMenu
+extends GridMenu
 
 @onready var navbar: Array = $HSplitContainer/Inventory/MarginContainer/VBoxContainer/Navbar/MarginContainer/HBoxContainer.get_children()
 var navbar_slots: Array = [
@@ -10,14 +10,12 @@ var navbar_slots: Array = [
 var navbar_focused: bool = true
 var focus_nav: int = 0
 
-
-func _init() -> void:
-	invs = [
-		preload("res://inventory/invs/mat_inv_player.tres"),
-		preload("res://inventory/invs/pot_inv_player.tres"),
-		preload("res://inventory/invs/equip_inv_player.tres"),
-		preload("res://inventory/invs/item_inv_player.tres"),
-	]
+var invs: Array[Inv] = [
+	preload("res://inventory/invs/mat_inv_player.tres"),
+	preload("res://inventory/invs/pot_inv_player.tres"),
+	preload("res://inventory/invs/equip_inv_player.tres"),
+	preload("res://inventory/invs/item_inv_player.tres"),
+]
 
 
 func _ready() -> void:
@@ -28,6 +26,17 @@ func _ready() -> void:
 	load_navbar()
 	update_slots()
 	close()
+
+
+func _process(_delta) -> void:
+	if Input.is_action_just_pressed("inventory"):
+		if is_open:
+			close()
+		else:
+			open()
+	
+	if is_open:		
+		read_input()
 
 
 func load_navbar() -> void:
@@ -59,18 +68,6 @@ func update_slots()	 -> void:
 		else:
 			s.update(focused_inv.inv_slots[i])
 		i += 1
-
-
-func _process(_delta) -> void:
-	if Input.is_action_just_pressed("inventory"):
-		if is_open:
-			close()
-		else:
-			open()
-	
-	if is_open:		
-		read_input()
-
 
 
 func close() -> void:
@@ -108,6 +105,12 @@ func read_input() -> void:
 		super()
 
 
+func browse(action: Action) -> void:
+	if navbar_focused:
+		browse_nav(action)
+	else:
+		super(action)
+
 
 func browse_nav(action: Action) -> void:
 	var old_nav: int = focus_nav
@@ -126,10 +129,3 @@ func browse_nav(action: Action) -> void:
 	navbar[focus_nav].display()
 	focused_inv = invs[focus_nav]
 	update_slots()
-
-
-func browse(action: Action) -> void:
-	if navbar_focused:
-		browse_nav(action)
-	else:
-		super(action)
