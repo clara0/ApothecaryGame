@@ -1,42 +1,28 @@
-extends Control
+extends SelectionMenu
 
-enum Action {
-	RIGHT,
-	LEFT,
-	DOWN,
-	UP,
-}
-
-const row_len: int = 6
-const num_rows: int = 5
-
-@onready var invs: Array[Inv] = [
-	preload("res://inventory/invs/mat_inv_player.tres"),
-	preload("res://inventory/invs/pot_inv_player.tres"),
-	preload("res://inventory/invs/equip_inv_player.tres"),
-	preload("res://inventory/invs/item_inv_player.tres"),
-]
-
-@onready var slots: Array = $HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer.get_children()
 @onready var navbar: Array = $HSplitContainer/Inventory/MarginContainer/VBoxContainer/Navbar/MarginContainer/HBoxContainer.get_children()
-@onready var detail: Control = $HSplitContainer/Detail
-
 var navbar_slots: Array = [
 	preload("res://inventory/navbar/navbar_mat.tres"),
 	preload("res://inventory/navbar/navbar_pot.tres"),
 	preload("res://inventory/navbar/navbar_equip.tres"),
 	preload("res://inventory/navbar/navbar_item.tres"),
 ]
-
-var focused_inv: Inv
-
-var is_open: bool = false
 var navbar_focused: bool = true
-var focus_slot: int = 0
 var focus_nav: int = 0
 
 
+func _init() -> void:
+	invs = [
+		preload("res://inventory/invs/mat_inv_player.tres"),
+		preload("res://inventory/invs/pot_inv_player.tres"),
+		preload("res://inventory/invs/equip_inv_player.tres"),
+		preload("res://inventory/invs/item_inv_player.tres"),
+	]
+
+
 func _ready() -> void:
+	slots = $HSplitContainer/Inventory/MarginContainer/VBoxContainer/GridContainer.get_children()
+	detail = $HSplitContainer/Detail
 	focused_inv = invs[focus_nav]
 	focused_inv.update.connect(update_slots)
 	load_navbar()
@@ -83,25 +69,7 @@ func _process(_delta) -> void:
 			open()
 	
 	if is_open:		
-		# I really feel like there's a better way of doing this...
-		if navbar_focused:
-			if Input.is_action_just_pressed("right"):
-				browse_nav(Action.RIGHT)
-			if Input.is_action_just_pressed("left"):
-				browse_nav(Action.LEFT)
-			if Input.is_action_just_pressed("enter"):
-				enter_inv()
-		else:
-			if Input.is_action_just_pressed("right"):
-				browse_inv(Action.RIGHT)
-			if Input.is_action_just_pressed("left"):
-				browse_inv(Action.LEFT)
-			if Input.is_action_just_pressed("up"):
-				browse_inv(Action.UP)
-			if Input.is_action_just_pressed("down"):
-				browse_inv(Action.DOWN)
-			if Input.is_action_just_pressed("back"):
-				enter_navbar()
+		read_input()
 
 
 
@@ -128,6 +96,19 @@ func open() -> void:
 	navbar_focused = true
 
 
+func read_input() -> void:
+	if is_open:		
+		# I really feel like there's a better way of doing this...
+		if navbar_focused:
+			if Input.is_action_just_pressed("enter"):
+				enter_inv()
+		else:
+			if Input.is_action_just_pressed("back"):
+				enter_navbar()
+		super()
+
+
+
 func browse_nav(action: Action) -> void:
 	var old_nav: int = focus_nav
 	match action:
@@ -147,26 +128,8 @@ func browse_nav(action: Action) -> void:
 	update_slots()
 
 
-func browse_inv(action: Action) -> void:
-	var old_slot: int = focus_slot
-	match action:
-		Action.RIGHT:
-			focus_slot += 1
-		Action.LEFT:
-			focus_slot -= 1
-		Action.UP:
-			focus_slot -= row_len
-		Action.DOWN:
-			focus_slot += row_len
-	
-	if focus_slot < 0:
-		focus_slot = max(0, focused_inv.inv_slots.size() - 1)
-	elif focus_slot >= focused_inv.inv_slots.size():
-		focus_slot = 0
+func browse(action: Action) -> void:
+	if navbar_focused:
+		browse_nav(action)
 	else:
-		focus_slot += row_len * num_rows
-		focus_slot %= row_len * num_rows
-	
-	slots[old_slot].focus_off()
-	slots[focus_slot].focus_on()
-	detail.load_slot(slots[focus_slot].get_slot())
+		super(action)
