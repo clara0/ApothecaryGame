@@ -11,14 +11,14 @@ func _ready() -> void:
 
 
 func update(item_slot: InvSlot) -> void:
-	if !item_slot || item_slot.quant == 0:
+	if !item_slot || item_slot.count == 0:
 		item_img.visible = false
 		item_quant.text = ""
 	else:
 		_inv_slot = item_slot
 		item_img.visible = true
 		item_img.texture = item_slot.item.texture
-		item_quant.text = str(item_slot.quant)
+		item_quant.text = str(item_slot.count)
 
 
 func get_slot() -> InvSlot:

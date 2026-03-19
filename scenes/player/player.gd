@@ -36,13 +36,12 @@ var direction: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	Signals.player_move.connect(_handle_movement)
 
 
 # runs once per frame
-func _process(_delta) -> void:
-	if MenuManager.open_menus.back() != MenuManager.MenuType.NONE:
-		_handle_movement()
-	_handle_inputs()
+# func _process(_delta) -> void:
+# 	_handle_movement()
 	
 
 # runs 60 times each second
@@ -51,8 +50,8 @@ func _physics_process(_delta) -> void:
 	move_and_slide()
 
 
-func _handle_movement() -> void:
-	direction = Input.get_vector("left", "right", "up", "down").normalized()
+func _handle_movement(dir: Vector2) -> void:
+	direction = dir
 	
 	# feel like there's a better way of doing this...
 	var x: float = direction.x
@@ -66,14 +65,6 @@ func _handle_movement() -> void:
 		_curr_anim = Anim.RIGHT if x > 0 else Anim.LEFT
 	
 	_animation_player.play(_anim_states[_curr_anim]) 
-
-
-func _handle_inputs() -> void:
-	# TODO: Add potion menu
-	if Input.is_action_just_pressed("menu"):
-		MenuManager.toggle(MenuManager.MenuType.GAME)
-	if Input.is_action_just_pressed("inventory"):
-		MenuManager.toggle(MenuManager.MenuType.INV)		
 
 
 func pause() -> void:

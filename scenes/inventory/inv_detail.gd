@@ -28,7 +28,7 @@ func load_slot(slot: InvSlot) -> void:
 		return
 	image.texture = slot.item.texture
 	name_label.text = slot.item.name
-	quantity.text = str(slot.quant)
+	quantity.text = str(slot.count)
 	desc.text = slot.item.desc
 	effects.text = format_list(slot.item.effects)
 	flavors.text = format_list(slot.item.flavors)

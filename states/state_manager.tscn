@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://diw35cprwhlfi"]
+
+[ext_resource type="Script" uid="uid://dadjwwd5ypeav" path="res://singletons/game_state.gd" id="1_nwnm8"]
+[ext_resource type="Script" uid="uid://c3i66jhu8sjwb" path="res://states/main_game.gd" id="2_w7alg"]
+[ext_resource type="Script" uid="uid://bl6crd8oma4a3" path="res://states/game_menu.gd" id="3_h7ut6"]
+[ext_resource type="Script" uid="uid://dyk5fo3vw43ws" path="res://states/inventory.gd" id="4_63exf"]
+
+[node name="StateManager" type="Node"]
+script = ExtResource("1_nwnm8")
+
+[node name="MainGame" type="Node" parent="."]
+script = ExtResource("2_w7alg")
+
+[node name="GameMenu" type="Node" parent="."]
+script = ExtResource("3_h7ut6")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("4_63exf")

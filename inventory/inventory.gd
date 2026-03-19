@@ -46,6 +46,7 @@ func sub(item: Item, amt: int = 1) -> Item:
 			target.quant -= amt
 		else:
 			inv_slots.remove_at(target_i)
+			update.emit()
 		return target.item
 	return null
 
