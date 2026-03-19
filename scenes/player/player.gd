@@ -34,6 +34,47 @@ var direction: Vector2 = Vector2.ZERO
 @export var stats: Stats
 
 
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+
+# runs once per frame
+func _process(_delta) -> void:
+	if MenuManager.open_menus.back() != MenuManager.MenuType.NONE:
+		_handle_movement()
+	
+
+# runs 60 times each second
+func _physics_process(_delta) -> void:
+	velocity = direction * speed;
+	move_and_slide()
+
+
+func _handle_movement() -> void:
+	direction = Input.get_vector("left", "right", "up", "down").normalized()
+	
+	# feel like there's a better way of doing this...
+	var x: float = direction.x
+	var y: float = direction.y
+	if y == 0 && x == 0:
+		# DO WE WANT AN IDLE?
+		_curr_anim = Anim.IDLE
+	elif abs(y) >= abs(x): # fyi y-axis is flipped
+		_curr_anim = Anim.UP if y < 0 else Anim.DOWN
+	else:
+		_curr_anim = Anim.RIGHT if x > 0 else Anim.LEFT
+	
+	_animation_player.play(_anim_states[_curr_anim]) 
+
+
+func _handle_inputs() -> void:
+	# TODO: Add potion menu
+	if Input.is_action_just_pressed("menu"):
+		MenuManager.toggle(MenuManager.MenuType.GAME)
+	if Input.is_action_just_pressed("inventory"):
+		MenuManager.toggle(MenuManager.MenuType.INV)		
+
+
 func pause() -> void:
 	_animation_player.stop()
 
@@ -60,30 +101,6 @@ func collect(item: Item, inv: Inventory) -> void:
 func give(item: Item) -> Item:
 	return material_inv.sub(item)
 	
-
-# runs once per frame
-func _process(_delta) -> void:
-	direction = Input.get_vector("left", "right", "up", "down").normalized()
-	
-	# feel like there's a better way of doing this...
-	var x: float = direction.x
-	var y: float = direction.y
-	if y == 0 && x == 0:
-		# DO WE WANT AN IDLE?
-		_curr_anim = Anim.IDLE
-	elif abs(y) >= abs(x): # fyi y-axis is flipped
-		_curr_anim = Anim.UP if y < 0 else Anim.DOWN
-	else:
-		_curr_anim = Anim.RIGHT if x > 0 else Anim.LEFT
-	
-	_animation_player.play(_anim_states[_curr_anim]) 
-
-
-# runs 60 times each second
-func _physics_process(_delta) -> void:
-	velocity = direction * speed;
-	move_and_slide()
-
 
 # save player state to JSON format
 func save() -> Dictionary:

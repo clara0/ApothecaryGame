@@ -29,13 +29,7 @@ func _ready() -> void:
 
 
 func _process(_delta) -> void:
-	if Input.is_action_just_pressed("inventory"):
-		if is_open:
-			close()
-		else:
-			open()
-	
-	if is_open:		
+	if visible:
 		read_input()
 
 
@@ -70,17 +64,7 @@ func update_slots()	 -> void:
 		i += 1
 
 
-func close() -> void:
-	process_mode = Node.PROCESS_MODE_INHERIT
-	get_tree().paused = false
-	visible = false
-	is_open = false
-
-
-func open() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
-	get_tree().paused = true
-	
+func open() -> void:	
 	slots[focus_slot].focus_off()
 	focus_slot = 0
 	
@@ -88,21 +72,22 @@ func open() -> void:
 	focus_nav = 0
 	navbar[focus_nav].display()
 	
-	visible = true
-	is_open = true
 	navbar_focused = true
 
 
+func close() -> void:
+	pass
+
+
 func read_input() -> void:
-	if is_open:		
-		# I really feel like there's a better way of doing this...
-		if navbar_focused:
-			if Input.is_action_just_pressed("enter"):
-				enter_inv()
-		else:
-			if Input.is_action_just_pressed("back"):
-				enter_navbar()
-		super()
+	# I really feel like there's a better way of doing this...
+	if navbar_focused:
+		if Input.is_action_just_pressed("enter"):
+			enter_inv()
+	else:
+		if Input.is_action_just_pressed("back"):
+			enter_navbar()
+	super()
 
 
 func browse(action: Action) -> void:

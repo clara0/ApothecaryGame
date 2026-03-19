@@ -1,7 +1,7 @@
 
 @abstract
 class_name GridMenu
-extends Control
+extends Menu
 
 enum Action {
 	RIGHT,
@@ -15,12 +15,7 @@ const num_rows: int = 5
 var slots: Array
 var detail: Control
 var focused_inv: Inv
-var is_open: bool = false
 var focus_slot: int = 0
-
-
-@abstract func open()
-@abstract func close()
 
 
 func update_slots()	 -> void:
@@ -35,16 +30,15 @@ func update_slots()	 -> void:
 
 
 func read_input() -> void:
-	if is_open:		
-		# I really feel like there's a better way of doing this...
-		if Input.is_action_just_pressed("right"):
-			browse(Action.RIGHT)
-		if Input.is_action_just_pressed("left"):
-			browse(Action.LEFT)
-		if Input.is_action_just_pressed("up"):
-			browse(Action.UP)
-		if Input.is_action_just_pressed("down"):
-			browse(Action.DOWN)
+	# I really feel like there's a better way of doing this...
+	if Input.is_action_just_pressed("right"):
+		browse(Action.RIGHT)
+	if Input.is_action_just_pressed("left"):
+		browse(Action.LEFT)
+	if Input.is_action_just_pressed("up"):
+		browse(Action.UP)
+	if Input.is_action_just_pressed("down"):
+		browse(Action.DOWN)
 
 
 func browse(action: Action) -> void:
