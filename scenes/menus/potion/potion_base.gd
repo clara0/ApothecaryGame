@@ -10,7 +10,6 @@ func _ready() -> void:
 
 func close() -> void:
 	visible = false
-	is_open = false
 
 
 func open() -> void:
@@ -18,4 +17,3 @@ func open() -> void:
 	focus_slot = 0
 	
 	visible = true
-	is_open = true

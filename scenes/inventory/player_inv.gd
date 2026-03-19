@@ -65,6 +65,7 @@ func update_slots()	 -> void:
 
 
 func open() -> void:	
+	print("hihi")
 	slots[focus_slot].focus_off()
 	focus_slot = 0
 	

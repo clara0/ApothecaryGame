@@ -35,8 +35,5 @@ func close() -> void:
 
 
 func open() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
-	get_tree().paused = true
-		
 	visible = true
 	is_open = true

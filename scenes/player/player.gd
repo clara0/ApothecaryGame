@@ -42,6 +42,7 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	if MenuManager.open_menus.back() != MenuManager.MenuType.NONE:
 		_handle_movement()
+	_handle_inputs()
 	
 
 # runs 60 times each second
