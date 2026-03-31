@@ -37,11 +37,6 @@ var direction: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	Signals.player_move.connect(_handle_movement)
-
-
-# runs once per frame
-# func _process(_delta) -> void:
-# 	_handle_movement()
 	
 
 # runs 60 times each second
