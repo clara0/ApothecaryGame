@@ -15,3 +15,4 @@ signal browse_grid(action: Action)
 signal focus_inv
 signal focus_nav
 signal open_game_menu(open: bool)
+signal open_craft_menu(open: bool)

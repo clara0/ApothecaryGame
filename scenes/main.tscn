@@ -420,11 +420,11 @@ visible = false
 
 [node name="PotionCraftMenu" parent="CanvasLayer" groups=["Menu"] instance=ExtResource("6_lvwsc")]
 visible = false
-offset_left = -320.0
-offset_top = -180.0
-offset_right = -320.0
-offset_bottom = -180.0
 
 [node name="GameMenu" parent="CanvasLayer" groups=["Menu"] instance=ExtResource("5_swrxa")]
 visible = false
 z_index = 999
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0

@@ -8,23 +8,23 @@ var curr_slot: Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Signals.open_craft_menu.connect(toggle)
 	close()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	# CRAFT MENU SHOULD NOT BE OPENED BY KEY, TESTING PURPOSES ONLY
-	if Input.is_action_just_pressed("craft_temp"):
-		if is_open:
-			close()
-		else:
-			open()
-	
-	if is_open:
-		pass
+	pass
 	
 	# if curr_slot:
 	# 	detail.load_slot(curr_slot.get_slot())
+
+
+func toggle(open_menu: bool) -> void:
+	if open_menu:
+		open()
+	else:
+		close()
 
 
 func close() -> void:
